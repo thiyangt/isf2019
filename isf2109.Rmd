@@ -1,111 +1,308 @@
 ---
-title: Monash Beamer Class Demonstration
-author: Rob J Hyndman
-date: \today
+title: "Peeking inside FFORMS: Feature-based FORecast-Model Selection"
+author: Thiyanga Talagala, \break Rob J Hyndman, George Athanasopoulos
+date:  "18 June 2019"
+fontsize: 12pt
 classoption: compress
-toc: true
-output: binb::monash
+toc: false
+output:
+  binb::monash:
+    fig_height: 5
+    fig_width: 8
+    highlight: tango
+    incremental: no
+    keep_tex: no
+    includes:
+      in_header: preamble.tex
 ---
 
 ```{r setup, include=FALSE}
+library(knitr)
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, cache=TRUE, dev.args=list(bg=grey(0.9), pointsize=11))
+read_chunk("src/main.R")
+library(ggplot2)
+library(patchwork)
+library(reshape2)
+library(grid)
+library(gridExtra)
+library(ggrepel)
+library(png)
+library(tsfeatures)
+library(tidyverse)
+library(ggpubr)
+library(RColorBrewer)
+library(iml) #machine learning interpretability package
+library(ggcorrplot) # to draw  ggcorrplot
+library(M4comp2018)
+library(dplyr)
+library(forecast)
+library(GGally) # to draw scatterplot matrix
+library(tidyr)
+library(rlang)
+library(tidyverse)
 ```
 
-# Intro
 
-## Slide with bullets
+## Big picture
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+\begin{tikzpicture}
+    \node<1> (img1) {\centerline{\includegraphics[width=\paperwidth, height=6.3cm]{img/rice1.png}}};
+    \node<2> (img2) {\centerline{\includegraphics[width=\paperwidth, height=6.3cm]{img/rice2.png}}};
+\end{tikzpicture}
 
-Use `\alert` to \alert{highlight} some text
+\begin{itemize}[<+->]
+\vfill\item What algorithm is likely to perform best?
+\vfill\item Algorithm selection problem, John Rice (1976)
+\end{itemize}
 
-### Some enumeration
 
-1. The first item
-1. Stuff
-1. Nonsense
+## Algorithm selection framework
 
-# Using R
+\begin{tikzpicture}
+    \node<1> (img1) {\centerline{\includegraphics[width=\paperwidth]{img/f1.png}}};
+    \node<2> (img2) {\centerline{\includegraphics[width=\paperwidth]{img/f2.png}}};
+    \node<3> (img3) {\centerline{\includegraphics[width=\paperwidth]{img/f3.png}}};
+    \node<4> (img4) {\centerline{\includegraphics[width=\paperwidth]{img/f4.png}}};
+    \node<5> (img5) {\centerline{\includegraphics[width=\paperwidth]{img/f5.png}}};
+    \node<6> (img6) {\centerline{\includegraphics[width=\paperwidth]{img/f6.png}}};
+    \node<7> (img7) {\centerline{\includegraphics[width=\paperwidth]{img/f7.png}}};
+    \node<8> (img8) {\centerline{\includegraphics[width=\paperwidth]{img/f8.png}}};
+    \node<9> (img9) {\centerline{\includegraphics[width=\paperwidth]{img/f9.png}}};
+    \node<10> (img10) {\centerline{\includegraphics[width=\paperwidth]{img/f10.png}}};
+    \node<11> (img11) {\centerline{\includegraphics[width=\paperwidth]{img/f11.png}}};
+    \node<12> (img12) {\centerline{\includegraphics[width=\paperwidth]{img/f12.png}}};
+    \node<13> (img13) {\centerline{\includegraphics[width=\paperwidth]{img/f13.png}}};
+    \node<14> (img14) {\centerline{\includegraphics[width=\paperwidth]{img/fh14.png}}};
+\end{tikzpicture}
 
-## Slide with R output
+ ## FFORMS: Feature-based FORecast Model Selection
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
+ \centerline{\includegraphics[width=\paperwidth]{img/fformsd1.png}}
+ 
+## Forecast-models included
 
-## Slide with graphics
+\begin{textblock}{12}(0.1,1.3)\small
+\begin{multicols}{2}
+  \begin{itemize}\tightlist
+    \item White noise process
+    \item ARMA/AR/MA
+    \item ARIMA
+    \item SARIMA
+    \item Random walk with drift
+    \item Random walk
+    \item Seasonal naive
+    \item TBATS
+    \item neural network forecasts
+    \item Theta method
+    \item STL-AR
+    \item ETS-without trend and seasonal 
+    \item ETS-trend
+    \item ETS-damped trend
+    \item ETS-trend and seasonal 
+    \item ETS-damped trend and seasonal
+    \item ETS-seasonal
+    \item MSTL-ETS
+    \item MSTL-ARIMA
+    \end{itemize}
+\end{multicols}
+\end{textblock}
 
-```{r pressure}
-plot(pressure)
-```
+## Time series features
 
-## Slide with mathematics
+\begin{textblock}{12}(0.1,1.3)
+\begin{multicols}{2}
+  \begin{itemize}\tightlist
+    \item length
+    \item strength of seasonality
+    \item strength of trend
+    \item linearity
+    \item curvature
+    \item spikiness
+    \item stability
+    \item lumpiness
+    \item spectral entropy
+    \item Hurst exponent
+    \item nonlinearity
+    \item unit root test statistics
+    \item parameter estimates of Holt's linear trend method
+    \item parameter estimates of Holt-Winters' additive method
+    \item ACF and PACF based features - calculated on raw, differenced, seasonally-differenced series and remainder series.
+    \end{itemize}
+\end{multicols}
+\end{textblock}
 
-Quantile score for observation $y$. For $0<p<1$:
+## Results: M4 Competition data
+
+\begin{table}[!h]
+\centering\scriptsize\tabcolsep=0.12cm
+\begin{tabular}{l|rrrrrr}
+ & Yearly & Quarterly & Monthly & Weekly & Daily & Hourly \\\hline
+\textcolor{red}{FFORMS} & 3.16 &  \bf{1.14} &  0.97&  \bf{2.31}& 3.56 &  \bf{1.06}\\
+auto.arima & 3.40 &1.17  &0.93  & 2.55 &  -& - \\
+ets & 3.44 &  1.16& 0.95 &  -&-  &  -\\
+theta & 3.37 &1.24  & 0.97 &2.64  & 3.33 & 1.59 \\
+rwd & \bf{3.07} & 1.33 & 1.18  & 2.68  & 3.25 & 11.45 \\
+rw & 3.97 & 1.48 & 1.21  &2.78  & \bf{3.27} & 11.60 \\
+nn & 4.06 & 1.55 &  1.14 &4.04 & 3.90 & 1.09 \\
+stlar & - & 2.02 &  1.33& 3.15 & 4.49 & 1.49 \\
+snaive & - &  1.66& 1.26 &  2.78& 24.46 & 2.86 \\
+tbats & - & 1.19 &  1.05& 2.49 & \bf{3.27} &  1.30\\
+wn & 13.42 &  6.50&  4.11&  49.91& 38.07 & 11.68 \\
+mstlarima & - & - &  - & - & 3.84 &  1.12\\
+mstlets & - &  - &  - &  - & 3.73 &  1.23\\
+combination (mean) & 4.09 & 1.58 &  1.16&6.96  & 7.94 & 3.93 \\\hline
+M4-1st & 2.98 & 1.12 &  0.88& 2.36 & 3.45 & 0.89\\\hline
+\end{tabular}
+\end{table}
+
+\pause
+
+- Can we trust ML-algorithms if we don't know how it works?
+
+
+##
+
+ \centerline{\includegraphics[width=\paperwidth, height=\paperheight]{img/forest.jpg}}
+ 
+\only<2->{\begin{textblock*}{100mm}(20mm,0.25\textheight)
+\begin{exampleblock}{Peeking inside FFORMS!!!}
+  \begin{itemize}
+    \item \textcolor{red}{Which} features are the most important?
+    \item \textcolor{red}{Where} they get important?
+    \item \textcolor{red}{How} they get important?
+    \item \textcolor{red}{When} and \textcolor{red}{how} these features linked with the prediction outcome?
+    \item \textcolor{red}{When} and \textcolor{red}{how} strongly each feature interact with
+other features
+  \end{itemize}
+\end{exampleblock}
+\end{textblock*}
+}
+
+
+## Partial dependence plots and ICE curves
+
+\begin{tikzpicture}
+    \node<1> (img1) {\centerline{\includegraphics[width=\paperwidth]{img/ice1.png}}};
+    \node<2> (img2) {\centerline{\includegraphics[width=\paperwidth]{img/ice2.png}}};
+    \node<3> (img3) {\centerline{\includegraphics[width=\paperwidth]{img/ice3.png}}};
+    \node<4> (img4) {\centerline{\includegraphics[width=\paperwidth]{img/ice4.png}}};
+    \node<5> (img5) {\centerline{\includegraphics[width=\paperwidth]{img/ice5.png}}};
+\end{tikzpicture}
+
+
+## Global explanation of feature contribution
 
 \begin{block}{}
-  \[
-    S(y_t,q_t(p)) = \left\{
-      \begin{array}{rl}
-            p(y_t-q_t(p)) & \text{if $y_t \ge q_t(p)$}\\
-        (1-p)(q_t(p)-y_t) & \text{if $y_t < q_t(p)$}
-      \end{array}\right.
-  \]
+Overall role of features in the choice of different forecast-model selection.
 \end{block}
 
-Average score over all percentiles gives the best distribution forecast:
-\[
-  QS = \frac{1}{99T}\sum_{p=1}^{99}\sum_{t=1}^T S(q_t(p),y_t)
-\]
+\begin{itemize}
+\item contribution to predictive accuracy
+\begin{itemize}
+\item Permutation-based variable importance
+\item Mean decrease in Gini coefficient
+\end{itemize}
+\item causality: change in the value of Y for a increase or decrease in the value of x
+\begin{itemize}
+\item Partial dependence plots (Jerome H. Friedman, 2001)
+\item Individual Conditional Expectation (ICE) curves (Goldstein
+et al., 2015; Zhao and Hastie, 2017)
+\end{itemize}
+\end{itemize}
 
-# RMarkdown Examples
 
-## R Figure
 
-The following code generates the plot on the next slide (taken from
-`help(bxp)` and modified slightly):
+## Partial dependence plots and ICE curves
 
-\small
+\begin{tikzpicture}
+    \node<1> (img1) {\centerline{\includegraphics[width=\paperwidth]{img/ice1.png}}};
+    \node<2> (img2) {\centerline{\includegraphics[width=\paperwidth]{img/ice2.png}}};
+    \node<3> (img3) {\centerline{\includegraphics[width=\paperwidth]{img/ice3.png}}};
+    \node<4> (img4) {\centerline{\includegraphics[width=\paperwidth]{img/ice4.png}}};
+    \node<5> (img5) {\centerline{\includegraphics[width=\paperwidth]{img/ice5.png}}};
+\end{tikzpicture}
 
-```{r pressureCode, eval=FALSE, echo=TRUE}
-library(stats)
-set.seed(753)
-bx.p <- boxplot(split(rt(100, 4),
-                      gl(5, 20)), plot=FALSE)
-bxp(bx.p, notch = FALSE, boxfill = "orange",
-    frame = FALSE, outl = TRUE,
-    main = "Example from help(bxp)")
+
+## Partial dependence curve and ICE curves
+
+\centerline{\includegraphics[width=\paperwidth]{img/ice5.png}}
+
+\begin{textblock}{4.8}(8,5)
+\begin{alertblock}{Feature importance measures:}
+\begin{itemize}
+\item "flatness" of PD curve
+\item "flatness" of ICE curves
+\end{itemize}
+\end{alertblock}
+\end{textblock}
+
+## Feature importance plot for yearly data
+
+\centerline{\includegraphics[width=\paperwidth]{img/viyearly-1.pdf}}
+
+## Partial dependency plots for yearly data
+
+```{r pdpyearly,out.width="102%", out.height="98%",fig.pos="h"}
+
 ```
 
+## Partial dependency plots for quarterly data
 
-## R Figure
+```{r pdpquarterly,out.width="102%", out.height="98%",fig.pos="h"}
 
-```{r pressureFig, echo=FALSE}
-library(stats)
-set.seed(753)
-bx.p <- boxplot(split(rt(100, 4),
-                      gl(5, 20)), plot=FALSE)
-bxp(bx.p, notch = FALSE, boxfill = "orange",
-    frame = FALSE, outl = TRUE,
-    main = "Example from help(bxp)")
 ```
 
-## R Table
+## Partial dependency plots for hourly data: entropy
 
-A simple `knitr::kable` example:
+-  forecastability of a time series
 
-\small
+\begin{columns}[T] % align columns
+\begin{column}{.3\textwidth}
+\includegraphics[width=6cm, height=7cm]{img/entropy.png}
 
-```{r kableEx, echo=TRUE}
-knitr::kable(mtcars[1:4, 1:7],
-       caption="(Parts of) the mtcars dataset")
-```
+\end{column}%
+\hfill%
+\begin{column}{.6\textwidth}
+\includegraphics[width=7cm, height=7cm]{img/en_pdp4.png}
+\end{column}%
+\end{columns}
 
-## Resources
 
-### For more information:
-- See the [RMarkdown repository](https://github.com/rstudio/rmarkdown) for more on RMarkdown
-- See the [binb repository](https://github.com/eddelbuettel/binb) for more on binb
-- See the [binb vignettes](https://github.com/eddelbuettel/binb/vignettes) for more examples.
+## Interaction effect
+
+- Friedman's H-statistic 
+
+\small{fraction of variance of two-variable partial dependency not captured by sum of the respective individual partial dependencies.}
+
+\pause
+
+\bf{\textcolor{blue}{\small{Hourly: }}}\bf{\small{interaction between linearity and seasonal lag at seasonally-differenced series}}
+
+\begin{tikzpicture}
+    \node<2> (img2) {\centerline{\includegraphics[width=12cm]{img/htwopdp1-1.png}}};
+    \node<3> (img3) {\centerline{\includegraphics[width=12cm]{img/htwopdp3-1.png}}};
+\end{tikzpicture}
+
+
+## Local explanation of feature contribution
+
+\begin{itemize}[<+->]
+\vfill\item zoom into local regions of the data to identify which features contribute most to classify a specific instance.
+\vfill\item \textbf{LIME}: \textbf{L}ocal \textbf{I}nterpretable \textbf{M}odel-agnostic \textbf{E}xplanations  
+\begin{itemize}[<+->]
+\vfill \item assumes that every complex model is linear on a local scale.
+\vfill\item fit a simple model around a single observation that will mimic how the global model behave at that locality.
+\end{itemize}
+\end{itemize}
+
+\pause
+
+\centerline{\includegraphics[width=8cm]{img/lime.png}}
+
+## Local explanation of feature contribution
+
+ \centerline{\includegraphics[width=\paperwidth]{img/qlime1.png}}
+ 
+## Local explanation of feature contribution
+
+ \centerline{\includegraphics[width=\paperwidth]{img/quarterlylime2.pdf}}

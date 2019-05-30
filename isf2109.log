@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.5.29)  29 MAY 2019 07:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.5.30)  30 MAY 2019 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -112,9 +112,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen125
 \Gm@dimlist=\toks15
 )
-(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/extsizes/size14
-.clo
-File: size14.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/
 pgfcore.sty
@@ -1137,8 +1136,8 @@ LaTeX Info: Redefining \textin on input line 153.
 nerthemerounded.sty)
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/textpos/textpos
 .sty
-Package: textpos 2016/06/07 v1.8
-Package: textpos 2016/06/07 1.8, absolute positioning of text on the page
+Package: textpos 2019/04/15 v1.9.1
+Package: textpos 2019/04/15 1.9.1, absolute positioning of text on the page
 \TP@textbox=\box59
 \TP@holdbox=\box60
 \TPHorizModule=\dimen258
@@ -1160,90 +1159,362 @@ tim
 )
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/micro
 type.sty
-Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
+Package: microtype 2019/02/28 v2.7b Micro-typographical refinements (RS)
 \MT@toks=\toks52
 \MT@count=\count170
-LaTeX Info: Redefining \textls on input line 793.
+LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen266
-LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1336.
 \MT@listname@count=\count171
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/micro
 type-pdftex.def
-File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2019/02/28 v2.7b Definitions specific to pdftex (RS)
 
-LaTeX Info: Redefining \lsstyle on input line 913.
-LaTeX Info: Redefining \lslig on input line 913.
+LaTeX Info: Redefining \lsstyle on input line 914.
+LaTeX Info: Redefining \lslig on input line 914.
 \MT@outer@space=\skip69
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/micro
 type.cfg
-File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
+File: microtype.cfg 2019/02/28 v2.7b microtype main configuration file (RS)
 ))
 Package hyperref Info: Option `breaklinks' set `true' on input line 56.
 
-(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyv
-rb.sty
-Package: fancyvrb 2019/01/15
-Style option: `fancyvrb' v3.2a <2019/01/15> (tvz)
-\FV@CodeLineNo=\count172
-\FV@InFile=\read2
-\FV@TabBox=\box61
-\c@FancyVerbLine=\count173
-\FV@StepNumber=\count174
-\FV@OutFile=\write5
-)
-(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.s
-ty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip70
-\fb@frw=\dimen267
-\fb@frh=\dimen268
-\FrameRule=\dimen269
-\FrameSep=\dimen270
-)
-(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/animate/animate
 .sty
-Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
-\LTleft=\skip71
-\LTright=\skip72
-\LTpre=\skip73
-\LTpost=\skip74
-\LTchunksize=\count175
-\LTcapwidth=\dimen271
-\LT@head=\box62
-\LT@firsthead=\box63
-\LT@foot=\box64
-\LT@lastfoot=\box65
-\LT@cols=\count176
-\LT@rows=\count177
-\c@LT@tables=\count178
-\c@LT@chunks=\count179
-\LT@p@ftn=\toks53
+Package: animate 2019/04/09 PDF & SVG animations from files and inline graphics
+
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/oberdiek/ifdraf
+t.sty
+Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/oberdiek/zref-a
+bspage.sty
+Package: zref-abspage 2018/11/21 v2.27 Module abspage for zref (HO)
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/oberdiek/zref-b
+ase.sty
+Package: zref-base 2018/11/21 v2.27 Module base for zref (HO)
+Package zref Info: New property list: main on input line 759.
+Package zref Info: New property: default on input line 760.
+Package zref Info: New property: page on input line 761.
+)
+\c@abspage=\count172
+Package zref Info: New property: abspage on input line 62.
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/media9/pdfbase.
+sty
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.
+sty
+Package: expl3 2019-05-28 L3 programming layer (loader) 
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3-
+code.tex
+Package: expl3 2019-05-28 L3 programming layer (code)
+\c_max_int=\count173
+\l_tmpa_int=\count174
+\l_tmpb_int=\count175
+\g_tmpa_int=\count176
+\g_tmpb_int=\count177
+\g__kernel_prg_map_int=\count178
+\c__ior_term_ior=\count179
+\c_log_iow=\count180
+\l_iow_line_count_int=\count181
+\l__iow_line_target_int=\count182
+\l__iow_one_indent_int=\count183
+\l__iow_indent_int=\count184
+\c_zero_dim=\dimen267
+\c_max_dim=\dimen268
+\l_tmpa_dim=\dimen269
+\l_tmpb_dim=\dimen270
+\g_tmpa_dim=\dimen271
+\g_tmpb_dim=\dimen272
+\c_zero_skip=\skip70
+\c_max_skip=\skip71
+\l_tmpa_skip=\skip72
+\l_tmpb_skip=\skip73
+\g_tmpa_skip=\skip74
+\g_tmpb_skip=\skip75
+\c_zero_muskip=\muskip12
+\c_max_muskip=\muskip13
+\l_tmpa_muskip=\muskip14
+\l_tmpb_muskip=\muskip15
+\g_tmpa_muskip=\muskip16
+\g_tmpb_muskip=\muskip17
+\l_keys_choice_int=\count185
+\l__intarray_loop_int=\count186
+\c__intarray_sp_dim=\dimen273
+\g__intarray_font_int=\count187
+\c__fp_leading_shift_int=\count188
+\c__fp_middle_shift_int=\count189
+\c__fp_trailing_shift_int=\count190
+\c__fp_big_leading_shift_int=\count191
+\c__fp_big_middle_shift_int=\count192
+\c__fp_big_trailing_shift_int=\count193
+\c__fp_Bigg_leading_shift_int=\count194
+\c__fp_Bigg_middle_shift_int=\count195
+\c__fp_Bigg_trailing_shift_int=\count196
+\c__kernel_randint_max_int=\count197
+\g__fp_array_int=\count198
+\l__fp_array_loop_int=\count199
+\l__sort_length_int=\count266
+\l__sort_min_int=\count267
+\l__sort_top_int=\count268
+\l__sort_max_int=\count269
+\l__sort_true_max_int=\count270
+\l__sort_block_int=\count271
+\l__sort_begin_int=\count272
+\l__sort_end_int=\count273
+\l__sort_A_int=\count274
+\l__sort_B_int=\count275
+\l__sort_C_int=\count276
+\l__tl_analysis_normal_int=\count277
+\l__tl_analysis_index_int=\count278
+\l__tl_analysis_nesting_int=\count279
+\l__tl_analysis_type_int=\count280
+\l__regex_internal_a_int=\count281
+\l__regex_internal_b_int=\count282
+\l__regex_internal_c_int=\count283
+\l__regex_balance_int=\count284
+\l__regex_group_level_int=\count285
+\l__regex_mode_int=\count286
+\c__regex_cs_in_class_mode_int=\count287
+\c__regex_cs_mode_int=\count288
+\l__regex_catcodes_int=\count289
+\l__regex_default_catcodes_int=\count290
+\c__regex_catcode_D_int=\count291
+\c__regex_catcode_S_int=\count292
+\c__regex_catcode_L_int=\count293
+\c__regex_catcode_O_int=\count294
+\c__regex_catcode_A_int=\count295
+\c__regex_all_catcodes_int=\count296
+\l__regex_show_lines_int=\count297
+\l__regex_min_state_int=\count298
+\l__regex_max_state_int=\count299
+\l__regex_left_state_int=\count300
+\l__regex_right_state_int=\count301
+\l__regex_capturing_group_int=\count302
+\l__regex_min_pos_int=\count303
+\l__regex_max_pos_int=\count304
+\l__regex_curr_pos_int=\count305
+\l__regex_start_pos_int=\count306
+\l__regex_success_pos_int=\count307
+\l__regex_curr_char_int=\count308
+\l__regex_curr_catcode_int=\count309
+\l__regex_last_char_int=\count310
+\l__regex_case_changed_char_int=\count311
+\l__regex_curr_state_int=\count312
+\l__regex_step_int=\count313
+\l__regex_min_active_int=\count314
+\l__regex_max_active_int=\count315
+\l__regex_replacement_csnames_int=\count316
+\l__regex_match_count_int=\count317
+\l__regex_min_submatch_int=\count318
+\l__regex_submatch_int=\count319
+\l__regex_zeroth_submatch_int=\count320
+\g__regex_trace_regex_int=\count321
+\c_empty_box=\box61
+\l_tmpa_box=\box62
+\l_tmpb_box=\box63
+\g_tmpa_box=\box64
+\g_tmpb_box=\box65
+\l__box_top_dim=\dimen274
+\l__box_bottom_dim=\dimen275
+\l__box_left_dim=\dimen276
+\l__box_right_dim=\dimen277
+\l__box_top_new_dim=\dimen278
+\l__box_bottom_new_dim=\dimen279
+\l__box_left_new_dim=\dimen280
+\l__box_right_new_dim=\dimen281
+\l__box_internal_box=\box66
+\l__coffin_internal_box=\box67
+\l__coffin_internal_dim=\dimen282
+\l__coffin_offset_x_dim=\dimen283
+\l__coffin_offset_y_dim=\dimen284
+\l__coffin_x_dim=\dimen285
+\l__coffin_y_dim=\dimen286
+\l__coffin_x_prime_dim=\dimen287
+\l__coffin_y_prime_dim=\dimen288
+\c_empty_coffin=\box68
+\l__coffin_aligned_coffin=\box69
+\l__coffin_aligned_internal_coffin=\box70
+\l_tmpa_coffin=\box71
+\l_tmpb_coffin=\box72
+\g_tmpa_coffin=\box73
+\g_tmpb_coffin=\box74
+\l__coffin_bounding_shift_dim=\dimen289
+\l__coffin_left_corner_dim=\dimen290
+\l__coffin_right_corner_dim=\dimen291
+\l__coffin_bottom_corner_dim=\dimen292
+\l__coffin_top_corner_dim=\dimen293
+\l__coffin_scaled_total_height_dim=\dimen294
+\l__coffin_scaled_width_dim=\dimen295
+\c__coffin_empty_coffin=\box75
+\l__coffin_display_coffin=\box76
+\l__coffin_display_coord_coffin=\box77
+\l__coffin_display_pole_coffin=\box78
+\l__coffin_display_offset_dim=\dimen296
+\l__coffin_display_x_dim=\dimen297
+\l__coffin_display_y_dim=\dimen298
+\g__file_internal_ior=\read2
+\l__seq_internal_a_int=\count322
+\l__seq_internal_b_int=\count323
+\c__deprecation_minus_one=\count324
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/l3pdfm
+ode.def
+File: l3pdfmode.def 2019-04-06 v L3 Experimental driver: PDF mode
+\l__driver_internal_box=\box79
+\l__driver_color_stack_int=\count325
+))
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/l3ke
+ys2e/l3keys2e.sty
+Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
+)
+Package: pdfbase 2019/05/24 v0.32 driver independent access to low-level PDF fe
+atures
+\g_pbs_page_int=\count326
+\g_pbs_oc_int=\count327
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ocgx2/ocgbase.s
+ty
+Package: ocgbase 2019/05/24 v0.15 support package for ocgx2.sty
+\g_ocgbase_nd_int=\count328
+)
+\@anim@box=\box80
+\@anim@measbox=\box81
+\@anim@tmpdima=\dimen299
+\@anim@tmpdimb=\dimen300
+\@anim@num=\count329
+\@anim@curframe=\count330
+\@anim@curframe@zb=\count331
+\@anim@resizeflags=\count332
+\@anim@skipfram=\count333
+\@anim@mulframecnt=\count334
+\@anim@@tmlnfile=\read3
+\@anim@tmpcnt=\count335
+\c@@anim@ltxcnt=\count336
+\@anim@curlayer=\count337
+\@anim@lineno=\count338
+\@anim@curfield=\count339
+\@anim@@resizeflags=\count340
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip76
+\RaggedLeftLeftskip=\skip77
+\RaggedRightLeftskip=\skip78
+\CenteringRightskip=\skip79
+\RaggedLeftRightskip=\skip80
+\RaggedRightRightskip=\skip81
+\CenteringParfillskip=\skip82
+\RaggedLeftParfillskip=\skip83
+\RaggedRightParfillskip=\skip84
+\JustifyingParfillskip=\skip85
+\CenteringParindent=\skip86
+\RaggedLeftParindent=\skip87
+\RaggedRightParindent=\skip88
+\JustifyingParindent=\skip89
 )
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/bookta
 bs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen272
-\lightrulewidth=\dimen273
-\cmidrulewidth=\dimen274
-\belowrulesep=\dimen275
-\belowbottomsep=\dimen276
-\aboverulesep=\dimen277
-\abovetopsep=\dimen278
-\cmidrulesep=\dimen279
-\cmidrulekern=\dimen280
-\defaultaddspace=\dimen281
-\@cmidla=\count180
-\@cmidlb=\count181
-\@aboverulesep=\dimen282
-\@belowrulesep=\dimen283
-\@thisruleclass=\count182
-\@lastruleclass=\count183
-\@thisrulewidth=\dimen284
+\heavyrulewidth=\dimen301
+\lightrulewidth=\dimen302
+\cmidrulewidth=\dimen303
+\belowrulesep=\dimen304
+\belowbottomsep=\dimen305
+\aboverulesep=\dimen306
+\abovetopsep=\dimen307
+\cmidrulesep=\dimen308
+\cmidrulekern=\dimen309
+\defaultaddspace=\dimen310
+\@cmidla=\count341
+\@cmidlb=\count342
+\@aboverulesep=\dimen311
+\@belowrulesep=\dimen312
+\@thisruleclass=\count343
+\@lastruleclass=\count344
+\@thisrulewidth=\dimen313
 )
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/multicol.
+sty
+Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
+\c@tracingmulticols=\count345
+\mult@box=\box82
+\multicol@leftmargin=\dimen314
+\c@unbalance=\count346
+\c@collectmore=\count347
+\doublecol@number=\count348
+\multicoltolerance=\count349
+\multicolpretolerance=\count350
+\full@width=\dimen315
+\page@free=\dimen316
+\premulticols=\dimen317
+\postmulticols=\dimen318
+\multicolsep=\skip90
+\multicolbaselineskip=\skip91
+\partial@page=\box83
+\last@line=\box84
+\maxbalancingoverflow=\dimen319
+\mult@rightbox=\box85
+\mult@grightbox=\box86
+\mult@gfirstbox=\box87
+\mult@firstbox=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\c@columnbadness=\count351
+\c@finalcolumnbadness=\count352
+\last@try=\dimen320
+\multicolovershoot=\dimen321
+\multicolundershoot=\dimen322
+\mult@nat@firstbox=\box106
+\colbreak@box=\box107
+\mc@col@check@num=\count353
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/pifont.s
+ty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bbding/bbding.s
+ty
+Package: bbding 1999/04/15 v1.01 Dingbats symbols
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 126.
+
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption
 .sty
 Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
@@ -1252,61 +1523,196 @@ Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 3.sty
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen285
-\captionmargin@=\dimen286
-\captionwidth=\dimen287
-\caption@tempdima=\dimen288
-\caption@indent=\dimen289
-\caption@parindent=\dimen290
-\caption@hangindent=\dimen291
+\captionmargin=\dimen323
+\captionmargin@=\dimen324
+\captionwidth=\dimen325
+\caption@tempdima=\dimen326
+\caption@indent=\dimen327
+\caption@parindent=\dimen328
+\caption@hangindent=\dimen329
 )
-\c@caption@flags=\count184
-\c@ContinuedFloat=\count185
+\c@caption@flags=\count354
+\c@ContinuedFloat=\count355
 Package caption Info: beamer document class.
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
-Package caption Info: longtable package is loaded.
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/algorithms/algo
+rithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
 
-(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/ltcapti
-on.sty
-Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
-))
-(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/oberdiek/grffil
-e.sty
-Package: grffile 2017/06/30 v1.18 Extended file name support for graphics (HO)
-Package grffile Info: Option `multidot' is set to `true'.
-Package grffile Info: Option `extendedchars' is set to `false'.
-Package grffile Info: Option `space' is set to `true'.
-Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 494.
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count356
+\float@exts=\toks53
+\float@box=\box108
+\@float@everytoks=\toks54
+\@floatcapt=\box109
+)
+\@float@every@algorithm=\toks55
+\c@algorithm=\count357
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/algorithmicx/al
+gpseudocode.sty
+Package: algpseudocode 
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/algorithmicx/al
+gorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count358
+\c@ALG@rem=\count359
+\c@ALG@nested=\count360
+\ALG@tlm=\skip92
+\ALG@thistlm=\skip93
+\c@ALG@Lnr=\count361
+\c@ALG@blocknr=\count362
+\c@ALG@storecount=\count363
+\c@ALG@tmpcounter=\count364
+\ALG@tmplength=\skip94
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/paralist/parali
+st.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip95
+\plpartopsep=\skip96
+\plitemsep=\skip97
+\plparsep=\skip98
+\pl@lab=\toks56
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/todonotes/todon
+otes.sty
+Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
+Package: todonotes 2018/11/22
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2019/05/09 v3.1.3 (3.1.3)
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendl
+ayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2019/05/09 v3.1.3 (3.1.3)
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/libraries
+/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)))
+\c@@todonotes@numberoftodonotes=\count365
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctable/ctable.s
+ty
+Package: ctable 2015/10/17 v1.31 ctable package for flexible typesetting of tab
+le and figure floats using key/value directives
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen330
+\ar@mcellbox=\box110
+\extrarowheight=\dimen331
+\NC@list=\toks57
+\extratabsurround=\skip99
+\backup@length=\skip100
+\ar@cellbox=\box111
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/tabularx.
+sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+\TX@col@width=\dimen332
+\TX@old@table=\dimen333
+\TX@old@col=\dimen334
+\TX@target=\dimen335
+\TX@delta=\dimen336
+\TX@cols=\count366
+\TX@ftn=\toks58
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/rotati
+ng.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count367
+\rotFPtop=\skip101
+\rotFPbot=\skip102
+\rot@float@box=\box112
+\rot@mess@toks=\toks59
+)
+
+Package ctable Warning:  Transparency disabled: incompatible with tikz package 
+ on input line 36.
+
+\@CTframesep=\dimen337
+\@dfltCTframesep=\dimen338
+\@CTframerule=\dimen339
+\@dfltCTframerule=\dimen340
+\@CTwidth=\dimen341
+\@dfltCTwidth=\dimen342
+\@CTcaptionskip=\dimen343
+\@dfltCTcaptionskip=\dimen344
+\@CTmaxwidth=\dimen345
+\@dfltCTmaxwidth=\dimen346
+\@CTmincapwidth=\dimen347
+\@dfltCTmincapwidth=\dimen348
+\@CTfooterwidth=\dimen349
+\@dfltCTfooterwidth=\dimen350
+\@CTw=\dimen351
+\@CTfloatwidth=\dimen352
+\@CToldsep=\dimen353
+\@CToldrule=\dimen354
+\CT@t=\box113
+\@CTcurftwidth=\dimen355
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multir
+ow.sty
+Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
+\multirow@colwidth=\skip103
+\multirow@cntb=\count368
+\multirow@dima=\skip104
+\bigstrutjot=\dimen356
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape
+.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 ) (./isf2109.aux)
 \openout1 = `isf2109.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 182.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 182.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 207.
+LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 207.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 207.
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    ... okay on input line 207.
 LaTeX Font Info:    Try loading font information for T1+Carlito-TLF on input li
-ne 182.
+ne 207.
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/carlito/T1Carli
 to-TLF.fd
@@ -1314,7 +1720,7 @@ File: T1Carlito-TLF.fd 2014/08/20 (autoinst) Font definitions for T1/Carlito-TL
 F.
 )
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 182.
+(Font)              scaled to size 12.0pt on input line 207.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1323,23 +1729,23 @@ LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(27.44162pt, 309.31212pt, 27.44162pt)
+* h-part:(L,W,R)=(23.49426pt, 317.20683pt, 23.49426pt)
 * v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
 * \paperwidth=364.19536pt
 * \paperheight=273.14662pt
-* \textwidth=309.31212pt
+* \textwidth=317.20683pt
 * \textheight=244.6939pt
-* \oddsidemargin=-44.82837pt
-* \evensidemargin=-44.82837pt
+* \oddsidemargin=-48.77573pt
+* \evensidemargin=-48.77573pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
-* \topskip=14.0pt
+* \topskip=12.0pt
 * \footskip=14.22636pt
 * \marginparwidth=4.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=12.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1370,8 +1776,8 @@ topdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )) ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 182.
+\AtBeginShipoutBox=\box114
+Package hyperref Info: Link coloring ON on input line 207.
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/namere
 f.sty
@@ -1381,74 +1787,68 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 itlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count186
+\c@section@level=\count369
 )
-LaTeX Info: Redefining \ref on input line 182.
-LaTeX Info: Redefining \pageref on input line 182.
-LaTeX Info: Redefining \nameref on input line 182.
+LaTeX Info: Redefining \ref on input line 207.
+LaTeX Info: Redefining \pageref on input line 207.
+LaTeX Info: Redefining \nameref on input line 207.
 (./isf2109.out) (./isf2109.out)
-\@outlinefile=\write6
-\openout6 = `isf2109.out'.
+\@outlinefile=\write5
+\openout5 = `isf2109.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 182.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 207.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 182.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 207.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/Carlito-TLF/m/n on input line 182.
+(Font)                  OT1/cmss/m/n --> OT1/Carlito-TLF/m/n on input line 207.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/Carlito-TLF/bx/n on input line 18
-2.
-\symnumbers=\mathgroup6
-\sympureletters=\mathgroup7
+(Font)                  OT1/cmss/bx/n --> OT1/Carlito-TLF/bx/n on input line 20
+7.
+\symnumbers=\mathgroup9
+\sympureletters=\mathgroup10
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/Carlito-TLF/m/n --> T1/lmr/m/n on input line 182.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 182.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/Carlito-TLF/bx/n on input line 182.
-
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/Carlito-TLF/bx/n on input line 182.
-
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 182.
+(Font)                  OT1/Carlito-TLF/m/n --> T1/lmr/m/n on input line 207.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 207.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 207.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/Carlito-TLF/m/n on input line 182.
+(Font)                  OT1/lmss/m/n --> T1/Carlito-TLF/m/n on input line 207.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/Carlito-TLF/m/n on input line 182.
+(Font)                  OT1/lmss/bx/n --> T1/Carlito-TLF/m/n on input line 207.
 
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 182.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 207.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/Carlito-TLF/m/it on input line 182.
+(Font)                  OT1/lmr/m/it --> T1/Carlito-TLF/m/it on input line 207.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/Carlito-TLF/m/it on input line 182
+(Font)                  OT1/lmr/bx/it --> T1/Carlito-TLF/m/it on input line 207
 .
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 182.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 207.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 182.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 207.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 182.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 207.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 (Font)                  T1/Carlito-TLF/m/n --> T1/Carlito-TLF/bx/n on input lin
-e 182.
+e 207.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  T1/Carlito-TLF/m/it --> T1/Carlito-TLF/bx/it on input l
-ine 182.
+ine 207.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/Carlito-TLF/bx/n --> T1/lmr/bx/n on input line 182.
+(Font)                  OT1/Carlito-TLF/bx/n --> T1/lmr/bx/n on input line 207.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  T1/Carlito-TLF/bx/n --> T1/Carlito-TLF/bx/n on input li
-ne 182.
+ne 207.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  T1/Carlito-TLF/m/n --> T1/Carlito-TLF/bx/n on input lin
-e 182.
+e 207.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  T1/Carlito-TLF/m/it --> T1/Carlito-TLF/bx/it on input l
-ine 182.
+ine 207.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 182.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 207.
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/translator/tran
 slator-basic-dictionary-English.dict
@@ -1474,9 +1874,9 @@ Dictionary: translator-numbers-dictionary, Language: English
 slator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@mv@tabular=\count187
-\c@mv@boldtabular=\count188
-LaTeX Info: Redefining \microtypecontext on input line 182.
+\c@mv@tabular=\count370
+\c@mv@boldtabular=\count371
+LaTeX Info: Redefining \microtypecontext on input line 207.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -1490,83 +1890,341 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Carlito-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 207.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-(./isf2109.nav)
+
+Package todonotes Warning: The length marginparwidth is less than 2cm and will 
+most likely cause issues with the appearance of inserted todonotes. The issue c
+an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
+loading the todonotes package. on input line 207.
+
+
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerpa
+tchparalist.sty) (./isf2109.nav)
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 182.
+(Font)              scaled to size 6.0pt on input line 207.
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 182.
-<titlepage.png, id=25, 2400.97pt x 1803.73875pt>
+(Font)              scaled to size 8.0pt on input line 207.
+<titlepage.png, id=37, 2400.97pt x 1803.73875pt>
 File: titlepage.png Graphic file (type png)
 <use titlepage.png>
-Package pdftex.def Info: titlepage.png  used on input line 187.
-(pdftex.def)             Requested size: 367.20067pt x 275.86104pt.
+Package pdftex.def Info: titlepage.png  used on input line 212.
+(pdftex.def)             Requested size: 367.82349pt x 275.86104pt.
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 24.0pt on input line 187.
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/bx/n' in size <24> not available
+(Font)              scaled to size 20.0pt on input line 212.
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/bx/n' in size <20> not available
 
 (Font)              Font shape `T1/Carlito-TLF/b/n' tried instead on input line
- 187.
+ 212.
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/b/n' will be
-(Font)              scaled to size 24.0pt on input line 187.
+(Font)              scaled to size 20.0pt on input line 212.
 [1
 
 {c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pd
-ftex.map} <./titlepage.png>] (./isf2109.toc
+ftex.map} <./titlepage.png>]
+<img/rice1.png, id=47, 1156.32pt x 650.43pt>
+File: img/rice1.png Graphic file (type png)
+<use img/rice1.png>
+Package pdftex.def Info: img/rice1.png  used on input line 228.
+(pdftex.def)             Requested size: 364.1898pt x 179.2509pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 228--228
+[][]  
+ []
+
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 1.
-)
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/bx/n' in size <17.28> not availa
-ble
-(Font)              Font shape `T1/Carlito-TLF/b/n' tried instead on input line
- 193.
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 193.
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 4.0pt on input line 193.
-[2
-
-] (./isf2109.toc) [3
-
-]
-\openout4 = `isf2109.vrb'.
-
-(./isf2109.vrb
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 13.
-(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+(Font)              scaled to size 14.4pt on input line 228.
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/bx/n' in size <14.4> not availab
 le
 (Font)              Font shape `T1/Carlito-TLF/b/n' tried instead on input line
- 13.
+ 228.
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 13.
-) [4
+(Font)              scaled to size 14.4pt on input line 228.
 
-] (./isf2109.toc) [5
+Overfull \vbox (21.85626pt too high) detected at line 228
+ []
 
-]
-\openout4 = `isf2109.vrb'.
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
+(Font)              scaled to size 4.0pt on input line 228.
+[2
 
-(./isf2109.vrb
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 5.
-) [6
+ <./img/rice1.png>]
+<img/rice2.png, id=54, 1156.32pt x 650.43pt>
+File: img/rice2.png Graphic file (type png)
+<use img/rice2.png>
+Package pdftex.def Info: img/rice2.png  used on input line 228.
+(pdftex.def)             Requested size: 364.1898pt x 179.2509pt.
 
-]
-<isf2109_files/figure-beamer/pressure-1.pdf, id=73, 578.16pt x 361.35pt>
-File: isf2109_files/figure-beamer/pressure-1.pdf Graphic file (type pdf)
-<use isf2109_files/figure-beamer/pressure-1.pdf>
-Package pdftex.def Info: isf2109_files/figure-beamer/pressure-1.pdf  used on in
-put line 254.
-(pdftex.def)             Requested size: 309.30814pt x 193.31758pt.
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 228--228
+[][]  
+ []
+
+
+Overfull \vbox (21.85626pt too high) detected at line 228
+ []
+
+[3
+
+ <./img/rice2.png>]
+<img/f1.png, id=61, 1156.32pt x 650.43pt>
+File: img/f1.png Graphic file (type png)
+<use img/f1.png>
+Package pdftex.def Info: img/f1.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[4
+
+ <./img/f1.png>]
+<img/f2.png, id=68, 1156.32pt x 650.43pt>
+File: img/f2.png Graphic file (type png)
+<use img/f2.png>
+Package pdftex.def Info: img/f2.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[5
+
+ <./img/f2.png>]
+<img/f3.png, id=75, 1156.32pt x 650.43pt>
+File: img/f3.png Graphic file (type png)
+<use img/f3.png>
+Package pdftex.def Info: img/f3.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[6
+
+ <./img/f3.png>]
+<img/f4.png, id=82, 1156.32pt x 650.43pt>
+File: img/f4.png Graphic file (type png)
+<use img/f4.png>
+Package pdftex.def Info: img/f4.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
 [7
 
- <./isf2109_files/figure-beamer/pressure-1.pdf>]
+ <./img/f4.png>]
+<img/f5.png, id=90, 1156.32pt x 650.43pt>
+File: img/f5.png Graphic file (type png)
+<use img/f5.png>
+Package pdftex.def Info: img/f5.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[8
+
+ <./img/f5.png>]
+<img/f6.png, id=97, 1156.32pt x 650.43pt>
+File: img/f6.png Graphic file (type png)
+<use img/f6.png>
+Package pdftex.def Info: img/f6.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[9
+
+ <./img/f6.png>]
+<img/f7.png, id=104, 1156.32pt x 650.43pt>
+File: img/f7.png Graphic file (type png)
+<use img/f7.png>
+Package pdftex.def Info: img/f7.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[10
+
+ <./img/f7.png>]
+<img/f8.png, id=111, 1156.32pt x 650.43pt>
+File: img/f8.png Graphic file (type png)
+<use img/f8.png>
+Package pdftex.def Info: img/f8.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[11
+
+ <./img/f8.png>]
+<img/f9.png, id=118, 1156.32pt x 650.43pt>
+File: img/f9.png Graphic file (type png)
+<use img/f9.png>
+Package pdftex.def Info: img/f9.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[12
+
+ <./img/f9.png>]
+<img/f10.png, id=125, 1156.32pt x 650.43pt>
+File: img/f10.png Graphic file (type png)
+<use img/f10.png>
+Package pdftex.def Info: img/f10.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[13
+
+ <./img/f10.png>]
+<img/f11.png, id=133, 1156.32pt x 650.43pt>
+File: img/f11.png Graphic file (type png)
+<use img/f11.png>
+Package pdftex.def Info: img/f11.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[14
+
+ <./img/f11.png>]
+<img/f12.png, id=140, 1156.32pt x 650.43pt>
+File: img/f12.png Graphic file (type png)
+<use img/f12.png>
+Package pdftex.def Info: img/f12.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[15
+
+ <./img/f12.png>]
+<img/f13.png, id=147, 1156.32pt x 650.43pt>
+File: img/f13.png Graphic file (type png)
+<use img/f13.png>
+Package pdftex.def Info: img/f13.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[16
+
+ <./img/f13.png>]
+<img/fh14.png, id=154, 1156.32pt x 650.43pt>
+File: img/fh14.png Graphic file (type png)
+<use img/fh14.png>
+Package pdftex.def Info: img/fh14.png  used on input line 249.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 249--249
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 249
+ []
+
+[17
+
+ <./img/fh14.png>]
+<img/fformsd1.png, id=161, 1156.32pt x 650.43pt>
+File: img/fformsd1.png Graphic file (type png)
+<use img/fformsd1.png>
+Package pdftex.def Info: img/fformsd1.png  used on input line 255.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+[18
+
+ <./img/fformsd1.png>]
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 285.
+[19
+
+] [20
+
+]
 LaTeX Font Info:    Try loading font information for OT1+Carlito-TLF on input l
-ine 275.
+ine 345.
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/carlito/OT1Carl
 ito-TLF.fd
@@ -1574,37 +2232,33 @@ File: OT1Carlito-TLF.fd 2014/08/20 (autoinst) Font definitions for OT1/Carlito-
 TLF.
 )
 LaTeX Font Info:    Font shape `OT1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 275.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `Carlito-TLF' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+(Font)              scaled to size 8.0pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 275.
+(Font)              scaled to size 6.0pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 275.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 275.
+(Font)              scaled to size 5.0pt on input line 345.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 345.
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 275
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 345
 .
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 275
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 345
 .
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 275.
+(Font)              <8> on input line 345.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 275.
+(Font)              <6> on input line 345.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 275.
-LaTeX Font Info:    Try loading font information for U+msa on input line 275.
+(Font)              <5> on input line 345.
+LaTeX Font Info:    Try loading font information for U+msa on input line 345.
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.f
 d
@@ -1614,7 +2268,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 a.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 275.
+LaTeX Font Info:    Try loading font information for U+msb on input line 345.
 
 (c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.f
 d
@@ -1624,119 +2278,472 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 b.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 275.
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 275.
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/it' will be
-(Font)              scaled to size 14.4pt on input line 275.
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 275.
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 275.
-[8
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 345.
 
-] (./isf2109.toc) [9
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-cm
+r.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
+(Font)              scaled to size 5.0pt on input line 345.
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/it' will be
+(Font)              scaled to size 8.0pt on input line 345.
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/it' will be
+(Font)              scaled to size 6.0pt on input line 345.
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/it' will be
+(Font)              scaled to size 5.0pt on input line 345.
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/bx/n' in size <8> not available
+(Font)              Font shape `T1/Carlito-TLF/b/n' tried instead on input line
+ 345.
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/b/n' will be
+(Font)              scaled to size 8.0pt on input line 345.
+[21
+
+] [22
 
 ]
-\openout4 = `isf2109.vrb'.
+<img/forest.jpg, id=194, 308.352pt x 231.264pt>
+File: img/forest.jpg Graphic file (type jpg)
+<use img/forest.jpg>
+Package pdftex.def Info: img/forest.jpg  used on input line 365.
+(pdftex.def)             Requested size: 364.20038pt x 273.16086pt.
 
-(./isf2109.vrb
-LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 6.
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 10.
-) [10
+Overfull \vbox (25.65036pt too high) detected at line 365
+ []
 
-]
-<isf2109_files/figure-beamer/pressureFig-1.pdf, id=108, 578.16pt x 361.35pt>
-File: isf2109_files/figure-beamer/pressureFig-1.pdf Graphic file (type pdf)
-<use isf2109_files/figure-beamer/pressureFig-1.pdf>
-Package pdftex.def Info: isf2109_files/figure-beamer/pressureFig-1.pdf  used on
- input line 304.
-(pdftex.def)             Requested size: 309.30814pt x 193.31758pt.
-[11
+[23
 
- <./isf2109_files/figure-beamer/pressureFig-1.pdf>]
-\openout4 = `isf2109.vrb'.
-
-(./isf2109.vrb
+ <./img/forest.jpg>]
+File: img/forest.jpg Graphic file (type jpg)
+<use img/forest.jpg>
+Package pdftex.def Info: img/forest.jpg  used on input line 365.
+(pdftex.def)             Requested size: 364.20038pt x 273.16086pt.
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/bx/n' in size <12> not available
 
 (Font)              Font shape `T1/Carlito-TLF/b/n' tried instead on input line
- 15.
+ 365.
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 15.
+(Font)              scaled to size 12.0pt on input line 365.
 
-Overfull \hbox (2.2101pt too wide) in alignment at lines 14--19
- [] [] [] [] [] [] [] [] 
+Overfull \vbox (25.65036pt too high) detected at line 365
  []
 
-
-Overfull \hbox (2.2101pt too wide) in alignment at lines 19--23
- [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (2.2101pt too wide) in alignment at lines 23--31
- [] [] [] [] [] [] [] [] 
- []
-
-)
-Overfull \vbox (11.4834pt too high) detected at line 338
- []
-
-[12
-
-] [13
+[24
 
 ]
-\tf@nav=\write7
-\openout7 = `isf2109.nav'.
+<img/ice1.png, id=209, 1156.32pt x 650.43pt>
+File: img/ice1.png Graphic file (type png)
+<use img/ice1.png>
+Package pdftex.def Info: img/ice1.png  used on input line 377.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
 
-\tf@toc=\write8
-\openout8 = `isf2109.toc'.
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 377--377
+[][]  
+ []
 
-\tf@snm=\write9
-\openout9 = `isf2109.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 364.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 364.
+Overfull \vbox (6.0525pt too high) detected at line 377
+ []
+
+[25
+
+ <./img/ice1.png>]
+<img/ice2.png, id=217, 1156.32pt x 650.43pt>
+File: img/ice2.png Graphic file (type png)
+<use img/ice2.png>
+Package pdftex.def Info: img/ice2.png  used on input line 377.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 377--377
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 377
+ []
+
+[26
+
+ <./img/ice2.png>]
+<img/ice3.png, id=224, 1156.32pt x 650.43pt>
+File: img/ice3.png Graphic file (type png)
+<use img/ice3.png>
+Package pdftex.def Info: img/ice3.png  used on input line 377.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 377--377
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 377
+ []
+
+[27
+
+ <./img/ice3.png>]
+<img/ice4.png, id=231, 1156.32pt x 650.43pt>
+File: img/ice4.png Graphic file (type png)
+<use img/ice4.png>
+Package pdftex.def Info: img/ice4.png  used on input line 377.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 377--377
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 377
+ []
+
+[28
+
+ <./img/ice4.png>]
+<img/ice5.png, id=238, 1156.32pt x 650.43pt>
+File: img/ice5.png Graphic file (type png)
+<use img/ice5.png>
+Package pdftex.def Info: img/ice5.png  used on input line 377.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 377--377
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 377
+ []
+
+[29
+
+ <./img/ice5.png>] [30
+
+]
+File: img/ice1.png Graphic file (type png)
+<use img/ice1.png>
+Package pdftex.def Info: img/ice1.png  used on input line 411.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 411--411
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 411
+ []
+
+[31
+
+]
+File: img/ice2.png Graphic file (type png)
+<use img/ice2.png>
+Package pdftex.def Info: img/ice2.png  used on input line 411.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 411--411
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 411
+ []
+
+[32
+
+]
+File: img/ice3.png Graphic file (type png)
+<use img/ice3.png>
+Package pdftex.def Info: img/ice3.png  used on input line 411.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 411--411
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 411
+ []
+
+[33
+
+]
+File: img/ice4.png Graphic file (type png)
+<use img/ice4.png>
+Package pdftex.def Info: img/ice4.png  used on input line 411.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 411--411
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 411
+ []
+
+[34
+
+]
+File: img/ice5.png Graphic file (type png)
+<use img/ice5.png>
+Package pdftex.def Info: img/ice5.png  used on input line 411.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+
+Overfull \hbox (7.99913pt too wide) in paragraph at lines 411--411
+[][]  
+ []
+
+
+Overfull \vbox (6.0525pt too high) detected at line 411
+ []
+
+[35
+
+]
+File: img/ice5.png Graphic file (type png)
+<use img/ice5.png>
+Package pdftex.def Info: img/ice5.png  used on input line 426.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+[36
+
+]
+<img/viyearly-1.pdf, id=291, 1445.4pt x 722.7pt>
+File: img/viyearly-1.pdf Graphic file (type pdf)
+<use img/viyearly-1.pdf>
+Package pdftex.def Info: img/viyearly-1.pdf  used on input line 432.
+(pdftex.def)             Requested size: 364.19536pt x 182.09709pt.
+[37
+
+ <./img/viyearly-1.pdf>]
+<isf2109_files/figure-beamer/pdpyearly-1.pdf, id=305, 578.16pt x 361.35pt>
+File: isf2109_files/figure-beamer/pdpyearly-1.pdf Graphic file (type pdf)
+<use isf2109_files/figure-beamer/pdpyearly-1.pdf>
+Package pdftex.def Info: isf2109_files/figure-beamer/pdpyearly-1.pdf  used on i
+nput line 438.
+(pdftex.def)             Requested size: 323.54684pt x 238.64061pt.
+
+Overfull \hbox (6.34001pt too wide) in paragraph at lines 438--438
+[][]  
+ []
+
+
+Overfull \vbox (31.83722pt too high) detected at line 438
+ []
+
+[38
+
+ <./isf2109_files/figure-beamer/pdpyearly-1.pdf>]
+<isf2109_files/figure-beamer/pdpquarterly-1.pdf, id=320, 578.16pt x 361.35pt>
+File: isf2109_files/figure-beamer/pdpquarterly-1.pdf Graphic file (type pdf)
+<use isf2109_files/figure-beamer/pdpquarterly-1.pdf>
+Package pdftex.def Info: isf2109_files/figure-beamer/pdpquarterly-1.pdf  used o
+n input line 444.
+(pdftex.def)             Requested size: 323.54684pt x 238.64061pt.
+
+Overfull \hbox (6.34001pt too wide) in paragraph at lines 444--444
+[][]  
+ []
+
+
+Overfull \vbox (31.83722pt too high) detected at line 444
+ []
+
+[39
+
+ <./isf2109_files/figure-beamer/pdpquarterly-1.pdf>]
+<img/entropy.png, id=335, 572.8602pt x 507.3354pt>
+File: img/entropy.png Graphic file (type png)
+<use img/entropy.png>
+Package pdftex.def Info: img/entropy.png  used on input line 465.
+(pdftex.def)             Requested size: 170.7143pt x 199.16829pt.
+
+Overfull \hbox (75.55128pt too wide) in paragraph at lines 465--465
+[][]  
+ []
+
+<img/en_pdp4.png, id=336, 473.3685pt x 379.4175pt>
+File: img/en_pdp4.png Graphic file (type png)
+<use img/en_pdp4.png>
+Package pdftex.def Info: img/en_pdp4.png  used on input line 465.
+(pdftex.def)             Requested size: 199.16734pt x 199.17401pt.
+
+Overfull \hbox (8.84131pt too wide) in paragraph at lines 465--465
+[][]  
+ []
+
+
+Overfull \vbox (19.99045pt too high) detected at line 465
+ []
+
+[40
+
+ <./img/entropy.png> <./img/en_pdp4.png>]
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/bx/n' in size <10.95> not availa
+ble
+(Font)              Font shape `T1/Carlito-TLF/b/n' tried instead on input line
+ 486.
+LaTeX Font Info:    Font shape `T1/Carlito-TLF/b/n' will be
+(Font)              scaled to size 10.95pt on input line 486.
+[41
+
+]
+<img/htwopdp1-1.png, id=351, 1445.4pt x 578.16pt>
+File: img/htwopdp1-1.png Graphic file (type png)
+<use img/htwopdp1-1.png>
+Package pdftex.def Info: img/htwopdp1-1.png  used on input line 486.
+(pdftex.def)             Requested size: 341.43306pt x 136.57338pt.
+
+Overfull \hbox (7.29918pt too wide) in paragraph at lines 486--486
+[][]  
+ []
+
+
+Overfull \vbox (34.03333pt too high) detected at line 486
+ []
+
+[42
+
+ <./img/htwopdp1-1.png>]
+<img/htwopdp3-1.png, id=360, 1445.4pt x 578.16pt>
+File: img/htwopdp3-1.png Graphic file (type png)
+<use img/htwopdp3-1.png>
+Package pdftex.def Info: img/htwopdp3-1.png  used on input line 486.
+(pdftex.def)             Requested size: 341.43306pt x 136.57338pt.
+
+Overfull \hbox (7.29918pt too wide) in paragraph at lines 486--486
+[][]  
+ []
+
+
+Overfull \vbox (34.03333pt too high) detected at line 486
+ []
+
+[43
+
+ <./img/htwopdp3-1.png (PNG copy)>]
+<img/lime.png, id=368, 266.4354pt x 165.7392pt>
+File: img/lime.png Graphic file (type png)
+<use img/lime.png>
+Package pdftex.def Info: img/lime.png  used on input line 503.
+(pdftex.def)             Requested size: 227.62204pt x 141.59972pt.
+
+Overfull \vbox (33.5854pt too high) detected at line 503
+ []
+
+[44
+
+ <./img/lime.png>]
+File: img/lime.png Graphic file (type png)
+<use img/lime.png>
+Package pdftex.def Info: img/lime.png  used on input line 503.
+(pdftex.def)             Requested size: 227.62204pt x 141.59972pt.
+
+Overfull \vbox (33.5854pt too high) detected at line 503
+ []
+
+[45
+
+]
+File: img/lime.png Graphic file (type png)
+<use img/lime.png>
+Package pdftex.def Info: img/lime.png  used on input line 503.
+(pdftex.def)             Requested size: 227.62204pt x 141.59972pt.
+
+Overfull \vbox (33.5854pt too high) detected at line 503
+ []
+
+[46
+
+]
+File: img/lime.png Graphic file (type png)
+<use img/lime.png>
+Package pdftex.def Info: img/lime.png  used on input line 503.
+(pdftex.def)             Requested size: 227.62204pt x 141.59972pt.
+
+Overfull \vbox (33.5854pt too high) detected at line 503
+ []
+
+[47
+
+]
+File: img/lime.png Graphic file (type png)
+<use img/lime.png>
+Package pdftex.def Info: img/lime.png  used on input line 503.
+(pdftex.def)             Requested size: 227.62204pt x 141.59972pt.
+
+Overfull \vbox (33.5854pt too high) detected at line 503
+ []
+
+[48
+
+]
+File: img/lime.png Graphic file (type png)
+<use img/lime.png>
+Package pdftex.def Info: img/lime.png  used on input line 503.
+(pdftex.def)             Requested size: 227.62204pt x 141.59972pt.
+
+Overfull \vbox (33.5854pt too high) detected at line 503
+ []
+
+[49
+
+]
+<img/qlime1.png, id=407, 1156.32pt x 650.43pt>
+File: img/qlime1.png Graphic file (type png)
+<use img/qlime1.png>
+Package pdftex.def Info: img/qlime1.png  used on input line 509.
+(pdftex.def)             Requested size: 364.19536pt x 204.85675pt.
+[50
+
+ <./img/qlime1.png>]
+<img/quarterlylime2.pdf, id=414, 1084.05pt x 578.16pt>
+File: img/quarterlylime2.pdf Graphic file (type pdf)
+<use img/quarterlylime2.pdf>
+Package pdftex.def Info: img/quarterlylime2.pdf  used on input line 515.
+(pdftex.def)             Requested size: 364.19536pt x 194.23396pt.
+[51
+
+ <./img/quarterlylime2.pdf>]
+\tf@nav=\write6
+\openout6 = `isf2109.nav'.
+
+\tf@toc=\write7
+\openout7 = `isf2109.toc'.
+
+\tf@snm=\write8
+\openout8 = `isf2109.snm'.
+
+
+Package caption Warning: Unused \captionsetup[figure] on input line 166.
+See the caption package documentation for explanation.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 520.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 520.
 (./isf2109.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 364.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 364.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 520.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 520.
 Package rerunfilecheck Info: File `isf2109.out' has not changed.
-(rerunfilecheck)             Checksum: B3E3BCA05931D997B7F14DA50D380746;285.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28108 strings out of 494553
- 540297 string characters out of 6175770
- 608152 words of memory out of 5000000
- 31075 multiletter control sequences out of 15000+600000
- 158979 words of font info for 99 fonts, out of 8000000 for 9000
+ 39870 strings out of 494553
+ 767054 string characters out of 6175770
+ 827636 words of memory out of 5000000
+ 42653 multiletter control sequences out of 15000+600000
+ 676472 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 68i,17n,95p,1834b,887s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-m
-athsy.enc}{c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips
-/lm/lm-mathex.enc}{c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/fonts/e
-nc/dvips/carlito/crlt_57h366.enc}{c:/Users/Thiyanga/AppData/Roaming/TinyTeX/tex
-mf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/Thiyanga/AppData/Roaming/Tin
-yTeX/texmf-dist/fonts/enc/dvips/carlito/crlt_z7vml3.enc}{c:/Users/Thiyanga/AppD
-ata/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/Thiyanga/
-AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/typoland/carlito/Carlito-Bold.pf
-b><c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/typoland/ca
-rlito/Carlito-Italic.pfb><c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/
-fonts/type1/typoland/carlito/Carlito.pfb><c:/Users/Thiyanga/AppData/Roaming/Tin
-yTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/Thiyanga/AppData/Roa
-ming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/Thiyanga/App
-Data/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/Thiy
-anga/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Us
-ers/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pf
-b>
-Output written on isf2109.pdf (13 pages, 264712 bytes).
+ 68i,14n,92p,1834b,893s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/carlito
+/crlt_z7vml3.enc}<c:/Users/Thiyanga/AppData/Roaming/TinyTeX/texmf-dist/fonts/ty
+pe1/typoland/carlito/Carlito-Bold.pfb><c:/Users/Thiyanga/AppData/Roaming/TinyTe
+X/texmf-dist/fonts/type1/typoland/carlito/Carlito.pfb><c:/Users/Thiyanga/AppDat
+a/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on isf2109.pdf (51 pages, 4676617 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 28760 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 466 PDF objects out of 1000 (max. 8388607)
+ 340 compressed objects within 4 object streams
+ 103 named destinations out of 1000 (max. 500000)
+ 10561 words of extra memory for PDF output out of 12000 (max. 10000000)
 
