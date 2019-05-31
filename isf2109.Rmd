@@ -172,7 +172,7 @@ M4-1st & 2.98 & 1.12 &  0.88& 2.36 & 3.45 & 0.89\\\hline
     \item \textcolor{red}{How} they get important?
     \item \textcolor{red}{When} and \textcolor{red}{how} these features linked with the prediction outcome?
     \item \textcolor{red}{When} and \textcolor{red}{how} strongly each feature interact with
-other features
+other features?
   \end{itemize}
 \end{exampleblock}
 \end{textblock*}
