@@ -172,7 +172,7 @@ M4-3rd & 3.13 & 1.23 &  0.95& 2.16 & 2.64 & 0.87\\\hline
     \item \textcolor{red}{Where} they get important?
     \item \textcolor{red}{How} they get important?
     \item \textcolor{red}{When} and \textcolor{red}{how} these features linked with the prediction outcome?
-    \item \textcolor{red}{When} and \textcolor{red}{how} strongly each feature interact with
+    \item \textcolor{red}{When} and \textcolor{red}{how} strongly each feature interacts with
 other features?
   \end{itemize}
 \end{exampleblock}
@@ -194,7 +194,7 @@ Overall role of features in the choice of different forecast-model selection.
 \item Permutation-based variable importance
 \item Mean decrease in Gini coefficient
 \end{itemize}
-\item causality: change in the value of Y for a increase or decrease in the value of x
+\item causality: change in the value of Y for an increase or decrease in the value of x
 \begin{itemize}
 \item Partial dependence plots (Jerome H. Friedman, 2001)
 \item Individual Conditional Expectation (ICE) curves (Goldstein
@@ -323,10 +323,22 @@ Hourly data
 \begin{itemize}[<+->]
 \vfill\item Global perspective of feature
 contribution: the overall role of features in the choice of different forecast-models.
-\vfill\item The displayed relationships of partial dependency plots consistent with the domain knowledge expectations.
+
 \vfill\item \textcolor{red}{What next?} Local perspective of feature contribution: zoom into local regions of the data to identify
 which features contribute most to classify a specific instance.
 \end{itemize}
 
 
+## R package
+
+ \vspace{0.15cm}
+\centerline{\includegraphics[width=\textwidth,height=3.5cm,keepaspectratio]{img/seer.png}}
+\vspace{0.3cm}
+ \centerline{available at: \textcolor{blue}{\underline{https://github.com/thiyangt/seer}}}
+
+
+```r
+devtools::install_github("thiyangt/seer")
+library(seer)
+```
 
