@@ -56,7 +56,7 @@ library(tidyverse)
 \end{itemize}
 
 
-## Algorithm selection framework
+## FFORMS: Feature-based FORecast Model Selection
 
 \begin{tikzpicture}
     \node<1> (img1) {\centerline{\includegraphics[width=\paperwidth]{img/f1.png}}};
@@ -71,13 +71,12 @@ library(tidyverse)
     \node<10> (img10) {\centerline{\includegraphics[width=\paperwidth]{img/f10.png}}};
     \node<11> (img11) {\centerline{\includegraphics[width=\paperwidth]{img/f11.png}}};
     \node<12> (img12) {\centerline{\includegraphics[width=\paperwidth]{img/f12.png}}};
-    \node<13> (img13) {\centerline{\includegraphics[width=\paperwidth]{img/f13.png}}};
-    \node<14> (img14) {\centerline{\includegraphics[width=\paperwidth]{img/fh14.png}}};
+    \node<14> (img14) {\centerline{\includegraphics[width=\paperwidth]{img/f13.png}}};
 \end{tikzpicture}
 
- ## FFORMS: Feature-based FORecast Model Selection
 
- \centerline{\includegraphics[width=\paperwidth]{img/fformsd1.png}}
+
+
  
 ## Forecast-models included
 
@@ -179,14 +178,15 @@ other features?
 }
 
 
+
 ## Partial dependence plots and ICE curves
 
 \begin{tikzpicture}
-    \node<1> (img1) {\centerline{\includegraphics[width=\paperwidth]{img/ice1.png}}};
-    \node<2> (img2) {\centerline{\includegraphics[width=\paperwidth]{img/ice2.png}}};
-    \node<3> (img3) {\centerline{\includegraphics[width=\paperwidth]{img/ice3.png}}};
-    \node<4> (img4) {\centerline{\includegraphics[width=\paperwidth]{img/ice4.png}}};
-    \node<5> (img5) {\centerline{\includegraphics[width=\paperwidth]{img/ice5.png}}};
+\node<1> (img1) {\centerline{\includegraphics[width=\paperwidth]{img/ice1.png}}};
+\node<2> (img2) {\centerline{\includegraphics[width=\paperwidth]{img/ice2.png}}};
+\node<3> (img3) {\centerline{\includegraphics[width=\paperwidth]{img/ice3.png}}};
+\node<4> (img4) {\centerline{\includegraphics[width=\paperwidth]{img/ice4.png}}};
+\node<5> (img5) {\centerline{\includegraphics[width=\paperwidth]{img/ice5.png}}};
 \end{tikzpicture}
 
 
@@ -206,7 +206,7 @@ Overall role of features in the choice of different forecast-model selection.
 \begin{itemize}
 \item Partial dependence plots (Jerome H. Friedman, 2001)
 \item Individual Conditional Expectation (ICE) curves (Goldstein
-et al., 2015; Zhao and Hastie, 2017)
+                                                       et al., 2015; Zhao and Hastie, 2017)
 \end{itemize}
 \end{itemize}
 
@@ -215,11 +215,11 @@ et al., 2015; Zhao and Hastie, 2017)
 ## Partial dependence plots and ICE curves
 
 \begin{tikzpicture}
-    \node<1> (img1) {\centerline{\includegraphics[width=\paperwidth]{img/ice1.png}}};
-    \node<2> (img2) {\centerline{\includegraphics[width=\paperwidth]{img/ice2.png}}};
-    \node<3> (img3) {\centerline{\includegraphics[width=\paperwidth]{img/ice3.png}}};
-    \node<4> (img4) {\centerline{\includegraphics[width=\paperwidth]{img/ice4.png}}};
-    \node<5> (img5) {\centerline{\includegraphics[width=\paperwidth]{img/ice5.png}}};
+\node<1> (img1) {\centerline{\includegraphics[width=\paperwidth]{img/ice1.png}}};
+\node<2> (img2) {\centerline{\includegraphics[width=\paperwidth]{img/ice2.png}}};
+\node<3> (img3) {\centerline{\includegraphics[width=\paperwidth]{img/ice3.png}}};
+\node<4> (img4) {\centerline{\includegraphics[width=\paperwidth]{img/ice4.png}}};
+\node<5> (img5) {\centerline{\includegraphics[width=\paperwidth]{img/ice5.png}}};
 \end{tikzpicture}
 
 
@@ -252,6 +252,7 @@ et al., 2015; Zhao and Hastie, 2017)
 
 ```
 
+
 ## Partial dependency plots for hourly data: entropy
 
 -  forecastability of a time series
@@ -268,6 +269,7 @@ et al., 2015; Zhao and Hastie, 2017)
 \end{columns}
 
 
+
 ## Interaction effect
 
 - Friedman's H-statistic 
@@ -282,27 +284,3 @@ et al., 2015; Zhao and Hastie, 2017)
     \node<2> (img2) {\centerline{\includegraphics[width=12cm]{img/htwopdp1-1.png}}};
     \node<3> (img3) {\centerline{\includegraphics[width=12cm]{img/htwopdp3-1.png}}};
 \end{tikzpicture}
-
-
-## Local explanation of feature contribution
-
-\begin{itemize}[<+->]
-\vfill\item zoom into local regions of the data to identify which features contribute most to classify a specific instance.
-\vfill\item \textbf{LIME}: \textbf{L}ocal \textbf{I}nterpretable \textbf{M}odel-agnostic \textbf{E}xplanations  
-\begin{itemize}[<+->]
-\vfill \item assumes that every complex model is linear on a local scale.
-\vfill\item fit a simple model around a single observation that will mimic how the global model behave at that locality.
-\end{itemize}
-\end{itemize}
-
-\pause
-
-\centerline{\includegraphics[width=8cm]{img/lime.png}}
-
-## Local explanation of feature contribution
-
- \centerline{\includegraphics[width=\paperwidth]{img/qlime1.png}}
- 
-## Local explanation of feature contribution
-
- \centerline{\includegraphics[width=\paperwidth]{img/quarterlylime2.pdf}}
