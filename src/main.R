@@ -15,59 +15,6 @@ library(RColorBrewer)
 library(iml) #machine learning interpretability package
 library(ggcorrplot) # to draw  ggcorrplot
 
-## ---- yearlyoob
-load("data/yearly/yearly_training.rda") # random forest training set 
-load("data/yearly/train_votes.rda") # oob votes from the random forest (see: yearly_cluster_results for more info)
-load("data/yearly/train_predictions_oob.rda") # based on oob prediction (see: yearly_cluster_results for more info)
-votes_oob <- data.frame(train_votes)
-names(votes_oob) <- names(table(train_predictions_oob))
-votes_oob$predicted <- train_predictions_oob
-votes_oob$classlabel <- yearly_training$classlabels
-votes_oob <- votes_oob %>%
-  mutate(id = seq_len(n())) %>%
-  melt(id.var = c("classlabel", "id", "predicted"), na.rm = T) %>%
-  select(-id)
-votes_oob <- votes_oob %>%
-  mutate(classlabel = recode(classlabel, nn="nn",
-                             theta = "theta", wn = "wn", "ARMA/AR/MA" = "ARMA", ARIMA = "ARIMA", "ETS-notrendnoseasonal" = "ETS_NTNS",
-                             "ETS-dampedtrend" = "ETS_DT", "ETS-trend" = "ETS_T", "rwd" = "rwd", "rw" = "rw" ))
-
-votes_oob <- votes_oob %>%
-  mutate(predicted = recode(predicted, nn="nn", theta = "theta",
-                            wn = "wn", "ARMA/AR/MA" = "ARMA", ARIMA = "ARIMA",
-                            "ETS-notrendnoseasonal" = "ETS_NTNS", "ETS-dampedtrend" = "ETS_DT",
-                            "ETS-trend" = "ETS_T","rwd" = "rwd", "rw" = "rw" ))
-
-votes_oob <- votes_oob %>%
-  mutate(variable = recode(variable, nn="nn", theta = "theta", wn = "wn", "ARMA/AR/MA" = "ARMA",
-                           ARIMA = "ARIMA", "ETS-notrendnoseasonal" = "ETS_NTNS", "ETS-dampedtrend" = "ETS_DT",
-                           "ETS-trend" = "ETS_T", "rwd" = "rwd", "rw" = "rw" ))
-# arrange labels
-votes_oob$variable <- factor(votes_oob$variable,
-                             levels = rev(c(
-                               "nn",
-                               "theta",
-                               "wn",
-                               "ARMA",
-                               "ARIMA",
-                               "ETS_NTNS",
-                               "ETS_DT",
-                               "ETS_T",
-                               "rwd",
-                               "rw" )))
-
-oob_boxplot_yearly <- ggplot(votes_oob, aes(x = classlabel, y = value, fill = classlabel)) +
-  geom_boxplot(outlier.size = 0.2, outlier.alpha = 0.4) +
-  ylab("Proportion") +
-  xlab("") +
-  theme(legend.position = "none", legend.title = element_blank(), 
-        legend.text.align = 0, text = element_text(size = 25), axis.text.x = element_text(angle = 90),
-        strip.text = element_text(size = 20)) +
-  guides(fill = guide_legend(reverse = TRUE)) +
-  scale_x_discrete(limits = c("nn", "theta", "wn", "ARMA", "ARIMA", "ETS_NTNS", "ETS_DT", "ETS_T", "rwd", "rw" )) +
-  coord_flip() + facet_wrap(. ~ variable, ncol=5)
-oob_boxplot_yearly
-
 
 
 ## ---- viyearly
@@ -177,8 +124,8 @@ feaImp_yearly <- ggplot(meanrank_yearly, aes(y = rank, x = feature, fill=as.fact
   geom_bar(position = "dodge", stat = "identity", width=0.3) +
   facet_wrap(~ class, ncol = 6, nrow = 2) +
   coord_flip() + ylab("Average rank")+ 
-  scale_fill_manual(breaks=c("0","1"), values=c("#f1a340","#998ec3"), guide="none")+theme(text=element_text(size = 20))+
-  theme(strip.text.x = element_text(size = 18))
+  scale_fill_manual(breaks=c("0","1"), values=c("#f1a340","#998ec3"), guide="none")+theme(text=element_text(size = 10))+
+  theme(strip.text.x = element_text(size = 10))
 feaImp_yearly
 
 
@@ -190,52 +137,6 @@ trendgrid$variable <- rep(1:1000, 20)
 load("data/yearly/pdp_yearly/ur_ppgrid_rmout.rda")
 ur_ppgrid_rmout$variable <- rep(1:1000, 20)
 
-
-# ## rwd
-# p1 <- ggplot(data = ur_ppgrid_rmout, aes_string(x = ur_ppgrid_rmout$ur_pp, y = "rwd")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("ur_pp") +
-#   stat_summary(fun.data = mean_cl_normal, fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +
-#   theme(legend.position = "none",text = element_text(size=10)) + ggtitle("rwd")+ylab("")
-# p7 <- ggplot(data = ur_ppgrid_rmout, aes_string(x = ur_ppgrid_rmout$ur_pp, y = "ETS.trend")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("ur_pp") +
-#   stat_summary(fun.data = mean_cl_normal, fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) + 
-#   theme(legend.position = "none", text = element_text(size=10)) + xlab("ur_pp") + ggtitle("ETS-trend")+ylab("")
-# p16 <- ggplot(data = ur_ppgrid_rmout, aes_string(x = ur_ppgrid_rmout$ur_pp, y = "ARIMA")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("ur_pp") +
-#   stat_summary(fun.data = mean_cl_normal,fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +
-#   theme(legend.position = "none", text = element_text(size=10)) + ggtitle("ARIMA")+ylab("")
-# p19 <- ggplot(data = ur_ppgrid_rmout, aes_string(x = ur_ppgrid_rmout$ur_pp, y = "ARMA.AR.MA")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("ur_pp") +
-#   stat_summary(fun.data = mean_cl_normal, fill="red",geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +
-#   theme(legend.position = "none", text = element_text(size=10)) + ggtitle("ARMA")+ylab("")
-# p22 <- ggplot(data = ur_ppgrid_rmout, aes_string(x = ur_ppgrid_rmout$ur_pp, y = "wn")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("ur_pp") +
-#   stat_summary(fun.data = mean_cl_normal,fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +
-#   theme(legend.position = "none", text = element_text(size=10)) + ggtitle("wn")+ylab("")
-# 
-# # trend
-# p2 <- ggplot(data = trendgrid, aes_string(x = trendgrid$trend, y = "rwd")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("trend") +
-#   stat_summary(fun.data = mean_cl_normal,fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) + 
-#   theme(legend.position = "none",text = element_text(size=10)) + ylab("")+theme(axis.text.x = element_text(angle = 90))
-# p8 <- ggplot(data = trendgrid, aes_string(x = trendgrid$trend, y = "ETS.trend")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("trend") +
-#   stat_summary(fun.data = mean_cl_normal,fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) + 
-#   theme(legend.position = "none", text = element_text(size=10)) + ylab("")+theme(axis.text.x = element_text(angle = 90))
-# p17 <- ggplot(data = trendgrid, aes_string(x = trendgrid$trend, y = "ARIMA")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("trend") +
-#   stat_summary(fun.data = mean_cl_normal,fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +
-#   theme(legend.position = "none", text = element_text(size=10)) + ylab("")+theme(axis.text.x = element_text(angle = 90))
-# p20 <- ggplot(data = trendgrid, aes_string(x = trendgrid$trend, y = "ARMA.AR.MA")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("trend") +
-#   stat_summary(fun.data = mean_cl_normal,fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) + 
-#   theme(legend.position = "none", text = element_text(size=10)) + ylab("")+theme(axis.text.x = element_text(angle = 90))
-# p23 <- ggplot(data = trendgrid, aes_string(x = trendgrid$trend, y = "wn")) +
-#   stat_summary(fun.y = mean, geom = "line", col = "red", size = 1) + xlab("trend") +
-#   stat_summary(fun.data = mean_cl_normal,fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +
-#   theme(legend.position = "none", text = element_text(size=10)) + ylab("")+theme(axis.text.x = element_text(angle = 90))
-# 
-# (p1|p7|p16|p19|p22)/(p2|p8|p17|p20|p23)
 
 ## facet 
 names(ur_ppgrid_rmout)[names(ur_ppgrid_rmout) == 'ARMA.AR.MA'] <- 'ARMA'
@@ -273,87 +174,6 @@ trend_yearly <- ggplot(data = trendgrid_long, aes_string(x = trendgrid_long$tren
 urpp_yearly/trend_yearly
 
 
-## ---- viquarterly
-# All variable scores into one dataframe
-load("data/quarterly/trainQ_importance.rda")
-load(file = "data/quarterly/sd_pdf_dfQ.rda")
-load(file = "data/quarterly/sd_ice_dfQ.rda")
-## Permutation based
-train_imp_dfQ <- data.frame(trainQ_importance)
-train_imp_dfQ <- add_rownames(train_imp_dfQ, "Feature")
-train_imp_dfQ <- within(train_imp_dfQ, rm("MeanDecreaseAccuracy", "MeanDecreaseGini"))
-permutation_impQ <- train_imp_dfQ %>% melt(id.vars = "Feature")
-# dim(permutation_impQ) # 510 3
-colnames(permutation_impQ) <- c("feature", "class", "score")
-## PDP-based
-sd_pdf_dfQ <- add_rownames(sd_pdf_dfQ, "class")
-pdp_imp <- sd_pdf_dfQ %>% melt(id.vars = "class")
-colnames(pdp_imp) <- c("class", "feature", "score")
-## ICE-based
-sd_ice_dfQ <- add_rownames(sd_ice_dfQ, "class")
-ice_imp <- sd_ice_dfQ %>% melt(id.vars = "class")
-colnames(ice_imp) <- c("class", "feature", "score")
-## Combine the data frames
-importancescoreQ <- bind_rows(permutation_impQ, pdp_imp)
-importancescoreQ <- bind_rows(importancescoreQ, ice_imp)
-importancescoreQ$VI <- rep(c("permutation", "PDP", "ICE"), each = 510)
-## rank permutation, sd_pdp, and sd_ice scores for each class
-importancescoreQ$class <- factor(importancescoreQ$class,
-                                 levels = c(
-                                   "snaive", "rwd", "rw", "ETS.notrendnoseasonal", "ETS.dampedtrend", "ETS.trend", "ETS.dampedtrendseasonal", "ETS.trendseasonal", "ETS.seasonal", "SARIMA",
-                                   "ARIMA", "ARMA.AR.MA", "stlar", "tbats", "wn", "theta", "nn"
-                                 ),
-                                 labels = c(
-                                   "snaive", "rwd", "rw", "ETS.NTNS", "ETS.DT", "ETS.T", "ETS.DTS", "ETS.TS", "ETS.S", "SARIMA",
-                                   "ARIMA", "ARMA.AR.MA", "stlar", "tbats", "wn", "theta", "nn"
-                                 )
-)
-rank_vi_quarterly_classes <- importancescoreQ %>%
-  group_by(VI, class) %>%
-  mutate(rank = min_rank(score))
-## compute mean rank
-meanrank_viq_classes <- rank_vi_quarterly_classes %>% group_by(feature, class) %>% summarise_at(vars(c(rank)), funs(mean))
-## overall importance of features to the forest
-train_impforestQ <- data.frame(trainQ_importance)
-train_impforestQ <- add_rownames(train_impforestQ, "Feature")
-train_impforestQ <- train_impforestQ[, c("Feature", "MeanDecreaseAccuracy", "MeanDecreaseGini")]
-train_impforestQ <- train_impforestQ %>%
-  mutate(rank_permu = min_rank(MeanDecreaseAccuracy)) %>%
-  mutate(rank_gini = min_rank(MeanDecreaseGini))
-train_impforestQ$mean_rank <- (train_impforestQ$rank_permu + train_impforestQ$rank_gini) / 2
-meanrank_viq_forest <- data.frame(
-  feature = train_impforestQ$Feature,
-  class = rep("overall", 30),
-  rank = train_impforestQ$mean_rank
-)
-## combine mean ranks for overall forest and separate classes
-meanrank_quarterly <- dplyr::bind_rows(meanrank_viq_forest, meanrank_viq_classes)
-## create horizontal bar chart for ranks
-orderOverall <- filter(meanrank_quarterly, class == "overall")
-meanrank_quarterly$feature <- factor(meanrank_quarterly$feature, levels = orderOverall$feature[order(orderOverall$rank)])
-meanrank_quarterly$class <- factor(meanrank_quarterly$class,
-                                   levels = c(
-                                     "overall", "snaive", "rwd", "rw", "ETS.NTNS", "ETS.DT", "ETS.T", "ETS.DTS", "ETS.TS", "ETS.S", "SARIMA",
-                                     "ARIMA", "ARMA.AR.MA", "stlar", "tbats", "wn", "theta", "nn"
-                                   ),
-                                   labels = c(
-                                     "overall", "snaive", "rwd", "rw", "ETS.NTNS", "ETS.DT", "ETS.T", "ETS.DTS", "ETS.TS", "ETS.S", "SARIMA",
-                                     "ARIMA", "ARMA", "stlar", "tbats", "wn", "theta", "nn"
-                                   )
-)
-meanrank_quarterly$rn <- 1:540
-topq <- meanrank_quarterly %>%
-  group_by(class) %>%
-  top_n(n = 5, wt = rank)
-meanrank_quarterly$istop <- ifelse(meanrank_quarterly$rn %in% topq$rn, TRUE, FALSE)
-feaImp_quarterly <- ggplot(meanrank_quarterly, aes(y = rank, x = feature,fill=as.factor(istop)), width=0.1) +
-  geom_bar(position = "dodge", stat = "identity") +
-  facet_wrap(~class, ncol = 9, nrow = 2) +
-  coord_flip() + ylab("Average rank")+ 
-  scale_fill_manual(breaks=c("0","1"), values=c("black","red"), guide="none")+
-  theme(text=element_text(size = 9))
-feaImp_quarterly
-
 ## ---- pdpquarterly
 load("data/quarterly/pdp_quarterly/seasonalitygridQ.rda")
 seasonalitygridQ$variable <- rep(1:1700, 20)
@@ -365,52 +185,6 @@ linearitygridM$variable <- rep(1:1700, 20)
 load("data/monthly/pdp_monthly/NgridM.rda")
 NgridM$variable <- rep(1:1700, 20)
 
-# seasonality
-# pq13 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="ETS.notrendnoseasonal")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3) +
-#   theme(legend.position = "none") + theme(legend.position="none", text = element_text(size=10))+ggtitle("ETS.NTNS")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq14 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="ETS.notrendnoseasonal")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1), fill="red",alpha = 0.3) +
-#   theme(legend.position = "none") + theme(legend.position="none", text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq17 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="ETS.dampedtrend")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1), fill="red",alpha = 0.3) +
-#   theme(legend.position = "none") + theme(legend.position="none", text = element_text(size=10))+ggtitle("ETS.DT")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq18 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="ETS.dampedtrend")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3) +
-#   theme(legend.position = "none") + theme(legend.position="none", text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq21 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="ETS.trend")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3) +
-#   theme(legend.position = "none") + theme(legend.position="none", text = element_text(size=10))+ggtitle("ETS.T")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq22 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="ETS.trend")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3) +
-#   theme(legend.position = "none") + theme(legend.position="none", text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq25 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="ETS.dampedtrendseasonal")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+
-#   theme(legend.position="none", text = element_text(size=10))+ggtitle("ETS.DTS")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq26 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="ETS.dampedtrendseasonal")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none",text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq29 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="ETS.trendseasonal")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ggtitle("ETS.TS")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq30 <- ggplot(data=trendgridQ, aes_string(x=trendgridQ$trend, y="ETS.trendseasonal")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none",text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq33 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="ETS.seasonal")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1), fill="red",alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ggtitle("ETS.S")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq34 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="ETS.seasonal")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# 
-# (pq13|pq17|pq25|pq21|pq29|pq33)/(pq14|pq18|pq26|pq22|pq30|pq34)
 
 names(seasonalitygridQ)[names(seasonalitygridQ) == "ETS.notrendnoseasonal"] <- 'ETS-NTNS'
 names(seasonalitygridQ)[names(seasonalitygridQ) == "ETS.dampedtrend"] <- 'ETS-DT'
@@ -491,119 +265,6 @@ trend_quarterly2 <- ggplot(data = trendgridQ_long2, aes_string(x = trendgridQ_lo
 
 sea_quarterly2/trend_quarterly2
 
-
-
-# pq45 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="ARMA.AR.MA")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ggtitle("ARMA.AR.MA")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq46 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="ARMA.AR.MA")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq49 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="stlar")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ggtitle("stlar")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq50 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="stlar")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1), fill="red",alpha = 0.3)+theme(legend.position="none",text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq53 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="tbats")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ggtitle("tbats")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq54 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="tbats")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq61 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="theta")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1), fill="red",alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ggtitle("theta")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq62 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="theta")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1),fill="red", alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq65 <- ggplot(data=seasonalitygridQ, aes_string(x=seasonalitygridQ$seasonality, y="nn")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonality")+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1), fill="red",alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ggtitle("nn")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# pq66 <- ggplot(data= trendgridQ, aes_string(x=trendgridQ$trend, y="nn")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("trend")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fun.args = list(mult = 1), fill="red",alpha = 0.3)+theme(legend.position="none", text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# (pq45|pq49|pq53|pq61|pq65)/(pq46|pq50|pq54|pq62|pq66)
-
-## ---- vimonthly
-# monthly feature importance
-load("data/monthly/trainM_importance.rda")
-load(file="data/monthly/sd_pdf_dfM.rda")
-load(file="data/monthly/sd_ice_dfM.rda")
-## Permutation based
-train_imp_dfM <- data.frame(trainM_importance)
-train_imp_dfM <- add_rownames(train_imp_dfM, "Feature")
-train_imp_dfM <- within(train_imp_dfM, rm("MeanDecreaseAccuracy", "MeanDecreaseGini"))
-permutation_impM <- train_imp_dfM %>% melt(id.vars = "Feature")
-colnames(permutation_impM) <- c("feature", "class", "score")
-## PDP-based
-sd_pdf_dfM <- add_rownames(sd_pdf_dfM, "class")
-pdp_impM <- sd_pdf_dfM %>% melt(id.vars = "class")
-colnames(pdp_impM) <- c("class", "feature", "score")
-## ICE-based
-sd_ice_dfM <- add_rownames(sd_ice_dfM, "class")
-ice_impM <- sd_ice_dfM %>% melt(id.vars = "class")
-colnames(ice_impM) <- c("class", "feature", "score")
-## Combine the data frames
-importancescoreM <- bind_rows(permutation_impM, pdp_impM)
-importancescoreM <- bind_rows(importancescoreM, ice_impM)
-importancescoreM$VI <- rep(c("permutation", "PDP", "ICE"), each = 510)
-## rank permutation, sd_pdp, and sd_ice scores for each class
-importancescoreM$class <- factor(importancescoreM$class,
-                                 levels = c(
-                                   "snaive", "rwd", "rw", "ETS.notrendnoseasonal", "ETS.dampedtrend", "ETS.trend", "ETS.dampedtrendseasonal", "ETS.trendseasonal", "ETS.seasonal", "SARIMA",
-                                   "ARIMA", "ARMA.AR.MA", "stlar", "tbats", "wn", "theta", "nn"
-                                 ),
-                                 labels = c(
-                                   "snaive", "rwd", "rw", "ETS.NTNS", "ETS.DT", "ETS.T", "ETS.DTS", "ETS.TS", "ETS.S", "SARIMA",
-                                   "ARIMA", "ARMA.AR.MA", "stlar", "tbats", "wn", "theta", "nn"
-                                 )
-)
-rank_vi_monthly_classes <- importancescoreM %>%
-  group_by(VI, class) %>%
-  mutate(rank = min_rank(score))
-## compute mean rank
-meanrank_vim_classes <- rank_vi_monthly_classes %>% group_by(feature, class) %>% summarise_at(vars(c(rank)), funs(mean))
-## overall importance of features to the forest
-train_impforestM <- data.frame(trainM_importance)
-train_impforestM <- add_rownames(train_impforestM, "Feature")
-train_impforestM <- train_impforestM[, c("Feature", "MeanDecreaseAccuracy", "MeanDecreaseGini")]
-train_impforestM <- train_impforestM %>%
-  mutate(rank_permu = min_rank(MeanDecreaseAccuracy)) %>%
-  mutate(rank_gini = min_rank(MeanDecreaseGini))
-train_impforestM$mean_rank <- (train_impforestM$rank_permu + train_impforestM$rank_gini) / 2
-meanrank_vim_forest <- data.frame(
-  feature = train_impforestM$Feature,
-  class = rep("overall", 30),
-  rank = train_impforestM$mean_rank
-)
-## combine mean ranks for overall forest and separate classes
-meanrank_monthly <- dplyr::bind_rows(meanrank_vim_forest, meanrank_vim_classes)
-## create horizontal bar chart for ranks
-orderOverall <- filter(meanrank_monthly, class == "overall")
-meanrank_monthly$feature <- factor(meanrank_monthly$feature, levels = orderOverall$feature[order(orderOverall$rank)])
-meanrank_monthly$class <- factor(meanrank_monthly$class,
-                                 levels = c(
-                                   "overall", "snaive", "rwd", "rw", "ETS.NTNS", "ETS.DT", "ETS.T", "ETS.DTS", "ETS.TS", "ETS.S", "SARIMA",
-                                   "ARIMA", "ARMA.AR.MA", "stlar", "tbats", "wn", "theta", "nn"
-                                 ),
-                                 labels = c(
-                                   "overall", "snaive", "rwd", "rw", "ETS.NTNS", "ETS.DT", "ETS.T", "ETS.DTS", "ETS.TS", "ETS.S", "SARIMA",
-                                   "ARIMA", "ARMA", "stlar", "tbats", "wn", "theta", "nn"
-                                 )
-)
-meanrank_monthly$rn <- 1:540
-topq <- meanrank_monthly %>%
-  group_by(class) %>%
-  top_n(n = 5, wt = rank)
-meanrank_monthly$istop <- ifelse(meanrank_monthly$rn %in% topq$rn, TRUE, FALSE)
-feaImp_monthly <- ggplot(meanrank_monthly, aes(y = rank, x = feature,fill=as.factor(istop))) +
-  geom_bar(position = "dodge", stat = "identity") +
-  facet_wrap(~class, ncol = 9, nrow = 2) +
-  coord_flip() + ylab("Average rank")+ 
-  scale_fill_manual(breaks=c("0","1"), values=c("black","red"), guide="none")+
-  theme(text=element_text(size = 9))
-feaImp_monthly
 
 ## ---- pdpmonthly
 # pl1 <- ggplot(data=linearitygridM, aes_string(x=linearitygridM$linearity, y="rw")) +
@@ -709,7 +370,8 @@ N_monthly <- ggplot(data = NgridM_long, aes_string(x = NgridM_long$N, y = "proba
 
 linearity_monthly/N_monthly
 
-## ----vihourly
+
+## ---- vihourly
 # All variable scores into one dataframe
 load("data/hourly/trainH_importance.rda")
 load(file = "data/hourly/sd_pdf_dfH.rda")
@@ -744,7 +406,6 @@ importancescoreH$class <- factor(importancescoreH$class,
                                  labels = c("snaive", "rw", "rwd", "mstlarima", "mstlets", "tbats","stlar",
                                             "theta","nn","wn"))
 
-
 rank_vi_hourly_classes <- importancescoreH %>%
   group_by(VI, class) %>%
   mutate(rank = min_rank(score))
@@ -771,15 +432,10 @@ meanrank_hourly <- dplyr::bind_rows(meanrank_vih_forest, meanrank_vih_classes)
 orderOverall <- filter(meanrank_hourly, class == "overall")
 meanrank_hourly$feature <- factor(meanrank_hourly$feature, levels = orderOverall$feature[order(orderOverall$rank)])
 meanrank_hourly$class <- factor(meanrank_hourly$class,
-                                levels = c(
-                                  "overall","snaive", "rw", "rwd", "mstlarima", "mstlets", "tbats","stlar",
-                                  "theta","nn","wn"
-                                ),
-                                labels = c(
-                                  "overall","snaive", "rw", "rwd", "mstlarima", "mstlets", "tbats","stlar",
-                                  "theta","nn","wn"
-                                )
-)
+                                levels = c("overall","snaive", "rw", "rwd", "mstlarima", "mstlets", "tbats","stlar",
+                                           "theta","nn","wn"),
+                                labels = c("overall","snaive", "rw", "rwd", "mstlarima", "mstlets", "tbats","stlar",
+                                           "theta","nn","wn"))
 
 meanrank_hourly$rn <- 1:286
 topq <- meanrank_hourly %>%
@@ -787,15 +443,18 @@ topq <- meanrank_hourly %>%
   top_n(n = 5, wt = rank)
 meanrank_hourly$istop <- ifelse(meanrank_hourly$rn %in% topq$rn, TRUE, FALSE)
 
-meanrank_hourly$feature <- plyr::revalue(meanrank_hourly$feature, c("seasonal_strength1"="seasonal_daily", "seasonal_strength2"="seasonal_weekly"))
+meanrank_hourly$feature <- plyr::revalue(meanrank_hourly$feature, 
+                                         c("seasonal_strength1"="seasonal_D (24)",
+                                           "seasonal_strength2"="seasonal_W (168)"))
 
 feaImp_hourly <- ggplot(meanrank_hourly, aes(y = rank, x = feature,fill=as.factor(istop))) +
-  geom_bar(position = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity", width=0.3) +
   facet_wrap(~class, ncol = 6, nrow = 2) +
   coord_flip() + ylab("Average rank")+ 
-  scale_fill_manual(breaks=c("0","1"), values=c("black","red"), guide="none")+
+  scale_fill_manual(breaks=c("0","1"), values=c("#f1a340","#998ec3"), guide="none")+
   theme(text=element_text(size = 10))
 feaImp_hourly
+
 
 ## ---- pdphourly
 load("data/hourly/hiceout/entropygridH.rda")
@@ -835,42 +494,54 @@ seas2_hourly <- ggplot(data = seasonality2gridH_long, aes_string(x = seasonality
 
 seas1_hourly/seas2_hourly
 
-# #snaive
-# p1 <- ggplot(data=seasonality1gridH, aes_string(x=seasonality1gridH$seasonal_strength1, y="snaive")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+xlab("seasonal_daily")+ 
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fill="red", fun.args = list(mult = 1), alpha = 0.3) + theme(legend.position="none",text = element_text(size=10))+ggtitle("snaive")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# ps1 <- ggplot(data=seasonality2gridH, aes_string(x=seasonality2gridH$seasonal_strength2, y="snaive")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fill="red", fun.args = list(mult = 1), alpha = 0.3) +xlab("seasonal_weekly")+ theme(legend.position="none",text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# ## rw
-# p4 <- ggplot(data=seasonality1gridH, aes_string(x=seasonality1gridH$seasonal_strength1, y="rw")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fill="red",fun.args = list(mult = 1), alpha = 0.3) +xlab("seasonal_daily")+ theme(legend.position="none",text = element_text(size=10))+ggtitle("rw")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# ps2 <- ggplot(data=seasonality2gridH, aes_string(x=seasonality2gridH$seasonal_strength2, y="rw")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+
-#   stat_summary(fun.data = mean_cl_normal, geom = "ribbon", fill="red", fun.args = list(mult = 1), alpha = 0.3) +xlab("seasonal_weekly")+ theme(legend.position="none",text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# ## mstlarima
-# p10 <- ggplot(data=seasonality1gridH, aes_string(x=seasonality1gridH$seasonal_strength1, y="mstlarima")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+
-#   stat_summary(fun.data = mean_cl_normal, fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +xlab("seasonal_daily")+ theme(legend.position="none",text = element_text(size=10))+ggtitle("mstlarima")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# ps4 <- ggplot(data=seasonality2gridH, aes_string(x=seasonality2gridH$seasonal_strength2, y="mstlarima")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+
-#   stat_summary(fun.data = mean_cl_normal, fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +xlab("seasonal_weekly")+ theme(legend.position="none",text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# ## tbats
-# p16 <- ggplot(data=seasonality1gridH, aes_string(x=seasonality1gridH$seasonal_strength1, y="tbats")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+
-#   stat_summary(fun.data = mean_cl_normal, fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +xlab("daily")+ theme(legend.position="none",text = element_text(size=10))+ggtitle("tbats")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# ps6 <- ggplot(data=seasonality2gridH, aes_string(x=seasonality2gridH$seasonal_strength2, y="tbats")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+
-#   stat_summary(fun.data = mean_cl_normal, fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +xlab("seasonal_weekly")+ theme(legend.position="none",text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# ## nn
-# p25 <- ggplot(data=seasonality1gridH, aes_string(x=seasonality1gridH$seasonal_strength1, y="nn")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+
-#   stat_summary(fun.data = mean_cl_normal, fill="red", geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +xlab("seasonal_daily")+ theme(legend.position="none",text = element_text(size=10))+ggtitle("nn")+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# ps9 <- ggplot(data=seasonality2gridH, aes_string(x=seasonality2gridH$seasonal_strength2, y="nn")) +
-#   stat_summary(fun.y = mean, geom = "line", col="red", size=1)+
-#   stat_summary(fun.data = mean_cl_normal, fill="red",geom = "ribbon", fun.args = list(mult = 1), alpha = 0.3) +xlab("seasonal_weekly")+ theme(legend.position="none",text = element_text(size=10))+ylab("")+theme(axis.text.x = element_text(angle = 90))
-# (p1|p4|p10|p16|p25)/(ps1|ps2|ps4|ps6|ps9)
+
+## ---- seasonalityhourly
+load("data/hourly/hiceout/seasonality1gridH.rda")
+seasonality1gridH$variable <- rep(1:1000, 20)
+load("data/hourly/hiceout/seasonality2gridH.rda")
+seasonality2gridH$variable <- rep(1:1000, 20)
+## Arrange graphs for faceting
+keep.modelnames <- c("snaive", "rw", "rwd", "mstlarima", "mstlets", "tbats","stlar",
+                     "theta","nn","wn")
+keeps1 <- c(keep.modelnames, "seasonal_strength1")
+keeps2 <- c(keep.modelnames, "seasonal_strength2")
+seasonal1 <- seasonality1gridH[, names(seasonality1gridH) %in% keeps1]
+seasonal1 <- rename(seasonal1, seasonal = seasonal_strength1) 
+seasonal2 <- seasonality2gridH[, names(seasonality2gridH) %in% keeps2]
+seasonal2 <- rename(seasonal2, seasonal = seasonal_strength2) 
+seasonal1_long <- gather(seasonal1, class, probability, "mstlarima":"wn", factor_key = TRUE)
+seasonal2_long <- gather(seasonal2, class, probability, "mstlarima":"wn", factor_key = TRUE)
+seasonal1_long_mean <- seasonal1_long %>%
+  group_by(seasonal, class) %>%
+  summarise(n=n(), mean=mean(probability), sd=sd(probability)) %>%
+  mutate(sem = sd/sqrt(n-1),
+         CI_lower = mean+qt((1-0.95)/2, n-1)*sem,
+         CI_upper = mean - qt((1-0.95)/2, n-1)*sem)
+seasonal2_long_mean <- seasonal2_long %>%
+  group_by(seasonal, class) %>%
+  summarise(n=n(), mean=mean(probability), sd=sd(probability)) %>%
+  mutate(sem = sd/sqrt(n-1),
+         CI_lower = mean+qt((1-0.95)/2, n-1)*sem,
+         CI_upper = mean - qt((1-0.95)/2, n-1)*sem)
+
+seasonal_DW <- dplyr::bind_rows(seasonal1_long_mean, seasonal2_long_mean)
+seasonal_DW$feature <- c(rep("seasonal_D (24)", 200), rep("seasonal_W (168)", 200))
+seasonal_DW$class <- factor(seasonal_DW$class,
+                            levels = c("snaive", "rw", "rwd", "mstlarima", "mstlets", "tbats","stlar",
+                                       "theta","nn","wn"))
+
+plot_pdp_hourly_seasonal <- ggplot(seasonal_DW, aes(x=seasonal, y=mean, color=feature))+
+  geom_line(aes(x=seasonal, y=mean, color=feature), size = 1)+
+  geom_ribbon(aes(ymin=CI_lower, ymax=CI_upper, fill=feature),alpha=0.4, colour = NA)+
+  facet_wrap(. ~ class, ncol = 5, nrow = 2)+
+  theme(axis.text.x = element_text(angle = 90), text = element_text(size=10), axis.title = element_text(size = 10))+
+  theme(strip.text.x = element_text(size = 10))+xlab("strength of seasonality")+
+  ylab("probability of selecting forecast-models")+
+  theme(legend.position="bottom", legend.title=element_blank())+
+  scale_colour_manual("",values=c("red", "blue"))+
+  scale_fill_manual("",values=c("red", "blue"))
+plot_pdp_hourly_seasonal
+
 
 ## ---- htwopdp
 load("data/hourly/linearity.sediff_seacf1.h.rda")
@@ -1105,92 +776,3 @@ int10 <- ggplot(
   ggtitle("wn")+theme(aspect.ratio=1, text = element_text(size=20))
 
 int1+int2+int3+int4+int5+int6+int7+int8+int9+int10+plot_layout(ncol = 5, nrow = 2)
-
-
-## ---- quarterlylime
-#which.min(m4qPCAresults1$PC1)  #405
-#which.min(m4qPCAresults1$PC2)  #653
-#which.max(m4qPCAresults1$PC1)  #908
-#which.max(m4qPCAresults1$PC2)  #405
-# which(0.46 < m4qPCAresults1$PC2 < 0.4692441) ##277166
-load("data/quarterly/quarterly_training.rda")
-load("data/quarterly/trainQ_votes.rda")
-pcaQvariables <- quarterly_training[, 1:30]
-pcaM4Q <- prcomp(pcaQvariables, center = TRUE, scale = TRUE)
-PC1m4q <- pcaM4Q$x[, 1]
-PC2m4q <- pcaM4Q$x[, 2]
-PC3m4q <- pcaM4Q$x[, 3]
-m4qPCAresults <- data.frame(PC1 = PC1m4q, PC2 = PC2m4q, PC3 = PC3m4q, pcaQvariables)
-quarterly_training$PC1 <- PC1m4q
-quarterly_training$PC2 <- PC2m4q
-
-pcaQ <- ggplot(m4qPCAresults, aes(x = PC1, y = PC2)) +
-  geom_point(colour = "firebrick1") +
-  theme(
-    legend.position = "none",
-    aspect.ratio = 1
-  )
-ggsave("pcaQ.png")
-
-pcaQ <- ggplot(m4qPCAresults, aes(x = PC1, y = PC2)) +
-  geom_point(colour = "firebrick1") +
-  theme(
-    legend.position = "none",
-    aspect.ratio = 1
-  ) +
-  geom_point(data =quarterly_training[c(25,178, 653, 182),], aes(x = PC1, y = PC2), color = "black", size=5) +
-  theme(plot.margin = grid::unit(c(0, 0, 0, 0), "mm"), text = element_text(size=20))+
-  geom_text_repel(
-    data = quarterly_training[c(25,178, 653, 182),],
-    aes(label = c("1: SARIMA", "2: rwd", "3: ETS-trendseasonal", "4: ETS-seasonal")),
-    size = 5,
-    box.padding = unit(0.35, "lines"),
-    point.padding = unit(0.3, "lines")
-  )+ggtitle("A")
-
-load("data/quarterly/explanationq.rda")
-load("data/ts_lime_qpca.rda")
-p1 <- autoplot(ts_lime_qpca[[1]])+theme(legend.position="none")+
-  xlab("")+theme(axis.title.x=element_blank(),
-                 #                     axis.text.x=element_blank(),
-                 axis.text.y=element_blank(),
-                 text = element_text(size=20))+ylab("")+labs(
-                   title = paste("B"),
-                   subtitle = "1: SARIMA")
-
-p2 <- autoplot(ts_lime_qpca[[2]])+theme(legend.position="none")+
-  ggtitle("2: rwd")+xlab("")+theme(axis.title.x=element_blank(),
-                                   #       axis.text.x=element_blank(),
-                                   axis.text.y=element_blank(),
-                                   text = element_text(size=20))+ylab("")
-p3 <- autoplot(ts_lime_qpca[[3]])+theme(legend.position="none")+
-  ggtitle("3: ETS-trendseasonal")+xlab("")+theme(axis.title.x=element_blank(),
-                                                 # axis.text.x=element_blank(),
-                                                 axis.text.y=element_blank(),
-                                                 text = element_text(size=20))+ylab("")
-p4 <- autoplot(ts_lime_qpca[[4]])+theme(legend.position="none")+
-  ggtitle("4: ETS-seasonal")+xlab("")+theme(axis.title.x=element_blank(),
-                                            # axis.text.x=element_blank(),
-                                            axis.text.y=element_blank(),
-                                            text = element_text(size=20))+ylab("")
-
-pp <- p1 + p2 + p3 + p4 + plot_layout(ncol = 1)
-pcaQ2 <- pcaQ+pp+plot_layout(ncol = 2)
-ggsave("img/pcaQ2.png")
-
-## ---- corY
-source("src/corrplot.R")
-load("data/yearly/classlabelM1Y.rda")
-clm1y <- classlabelM1Y$accuracy
-mase_m1y <- clm1y[seq(1, nrow(clm1y), by = 2), ] 
-## M3 competition yearly series
-load("data/yearly/classlabelM3Y.rda") # on monash cluster
-clm3y <- classlabelM3Y$accuracy
-mase_m3y <- clm3y[seq(1, nrow(clm3y), by = 2), ] 
-## MAR-based simulated time series
-load("data/yearly/yearly_MARaccuracy.rda") # on monash cluster
-## preparation of "Y" matrix
-m1m3_mase <- rbind(mase_m1y, mase_m3y)
-Y <- rbind(m1m3_mase, yearly_MARaccuracy)
-Y <- data.frame(Y)
-ggpairs(Y, upper = list(continuous = corrplot),axisLabels="none")

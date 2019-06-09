@@ -181,16 +181,6 @@ other features?
 
 
 
-## Partial dependence plots and ICE curves
-
-\begin{tikzpicture}
-\node<1> (img1) {\centerline{\includegraphics[width=\paperwidth]{img/ice1.png}}};
-\node<2> (img2) {\centerline{\includegraphics[width=\paperwidth]{img/ice2.png}}};
-\node<3> (img3) {\centerline{\includegraphics[width=\paperwidth]{img/ice3.png}}};
-\node<4> (img4) {\centerline{\includegraphics[width=\paperwidth]{img/ice4.png}}};
-\node<5> (img5) {\centerline{\includegraphics[width=\paperwidth]{img/ice5.png}}};
-\end{tikzpicture}
-
 
 ## Global explanation of feature contribution
 
@@ -240,11 +230,13 @@ Overall role of features in the choice of different forecast-model selection.
 
 ## Feature importance plot for yearly data
 
-\centerline{\includegraphics[width=\paperwidth]{img/viyearly-1.pdf}}
+```{r viyearly, fig.pos="h", out.width="100%", out.height="98%"}
+
+```
 
 ## Partial dependency plots for yearly data
 
-```{r pdpyearly,out.width="102%", out.height="98%",fig.pos="h"}
+```{r pdpyearly, out.width="102%", out.height="98%",fig.pos="h"}
 
 ```
 
@@ -253,6 +245,45 @@ Overall role of features in the choice of different forecast-model selection.
 ```{r pdpquarterly,out.width="102%", out.height="98%",fig.pos="h"}
 
 ```
+
+## Partial dependency plots for monthly data
+
+\small linearity: estimated value of $\beta_1$ based on
+$T_t=\beta_0+\beta_1 \phi_1(t) + \beta_2\phi_2(t) + \varepsilon_t$
+
+
+```{r pdpmonthly,out.width="105%", fig.pos="h"}
+```
+
+
+## Hourly series
+- multiple seasonality
+\begin{columns}[T] % align columns
+\begin{column}{.48\textwidth}
+\includegraphics[width=6cm, height=7cm]{img/mstsplot.png}
+\end{column}%
+\hfill%
+\begin{column}{.48\textwidth}
+Hourly data
+\begin{itemize}
+\item daily - 24
+\item weekly - 168
+\end{itemize}
+\end{column}%
+\end{columns}
+
+## Feature importance plot for hourly data
+
+```{r vihourly, fig.pos="h", out.width="98%", out.height="98%", dev="png"}
+
+```
+
+## Partial dependency plots for hourly data: Seasonality
+
+```{r seasonalityhourly,out.width="105%", fig.pos="h"}
+
+```
+
 
 
 ## Partial dependency plots for hourly data: entropy
@@ -271,12 +302,11 @@ Overall role of features in the choice of different forecast-model selection.
 \end{columns}
 
 
-
 ## Interaction effect
 
 - Friedman's H-statistic 
 
-\small{fraction of variance of two-variable partial dependency not captured by sum of the respective individual partial dependencies.}
+\small fraction of variance of two-variable partial dependency not captured by sum of the respective individual partial dependencies.
 
 \pause
 
@@ -286,3 +316,17 @@ Overall role of features in the choice of different forecast-model selection.
     \node<2> (img2) {\centerline{\includegraphics[width=12cm]{img/htwopdp1-1.png}}};
     \node<3> (img3) {\centerline{\includegraphics[width=12cm]{img/htwopdp3-1.png}}};
 \end{tikzpicture}
+
+## Discussion
+
+
+\begin{itemize}[<+->]
+\vfill\item Global perspective of feature
+contribution: the overall role of features in the choice of different forecast-models.
+\vfill\item The displayed relationships of partial dependency plots consistent with the domain knowledge expectations.
+\vfill\item \textcolor{red}{What next?} Local perspective of feature contribution: zoom into local regions of the data to identify
+which features contribute most to classify a specific instance.
+\end{itemize}
+
+
+
