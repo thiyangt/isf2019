@@ -7,6 +7,8 @@
 **/cache/*
 **/*_files/*
 
+*_cache/*
+*_files/*
 ## Apple files
 .DS_Store
 
