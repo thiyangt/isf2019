@@ -71,7 +71,7 @@ library(tidyverse)
     \node<10> (img10) {\centerline{\includegraphics[width=\paperwidth]{img/f10.png}}};
     \node<11> (img11) {\centerline{\includegraphics[width=\paperwidth]{img/f11.png}}};
     \node<12> (img12) {\centerline{\includegraphics[width=\paperwidth]{img/f12.png}}};
-    \node<14> (img14) {\centerline{\includegraphics[width=\paperwidth]{img/f13.png}}};
+    \node<13> (img13) {\centerline{\includegraphics[width=\paperwidth]{img/f13.png}}};
 \end{tikzpicture}
 
 
@@ -136,21 +136,23 @@ library(tidyverse)
 \centering\scriptsize\tabcolsep=0.12cm
 \begin{tabular}{l|rrrrrr}
  & Yearly & Quarterly & Monthly & Weekly & Daily & Hourly \\\hline
-\textcolor{red}{FFORMS} & 3.16 &  \bf{1.14} &  0.97&  \bf{2.31}& 3.56 &  \bf{1.06}\\
+\textcolor{red}{FFORMS} & 3.17 &  1.20 &  0.98&  2.31& 3.57 &  0.84\\\hline
 auto.arima & 3.40 &1.17  &0.93  & 2.55 &  -& - \\
 ets & 3.44 &  1.16& 0.95 &  -&-  &  -\\
 theta & 3.37 &1.24  & 0.97 &2.64  & 3.33 & 1.59 \\
-rwd & \bf{3.07} & 1.33 & 1.18  & 2.68  & 3.25 & 11.45 \\
-rw & 3.97 & 1.48 & 1.21  &2.78  & \bf{3.27} & 11.60 \\
+rwd & 3.07 & 1.33 & 1.18  & 2.68  & 3.25 & 11.45 \\
+rw & 3.97 & 1.48 & 1.21  &2.78  & 3.27 & 11.60 \\
 nn & 4.06 & 1.55 &  1.14 &4.04 & 3.90 & 1.09 \\
 stlar & - & 2.02 &  1.33& 3.15 & 4.49 & 1.49 \\
 snaive & - &  1.66& 1.26 &  2.78& 24.46 & 2.86 \\
-tbats & - & 1.19 &  1.05& 2.49 & \bf{3.27} &  1.30\\
+tbats & - & 1.19 &  1.05& 2.49 & 3.27 &  1.30\\
 wn & 13.42 &  6.50&  4.11&  49.91& 38.07 & 11.68 \\
 mstlarima & - & - &  - & - & 3.84 &  1.12\\
 mstlets & - &  - &  - &  - & 3.73 &  1.23\\
 combination (mean) & 4.09 & 1.58 &  1.16&6.96  & 7.94 & 3.93 \\\hline
-M4-1st & 2.98 & 1.12 &  0.88& 2.36 & 3.45 & 0.89\\\hline
+M4-1st & 2.98 & 1.12 &  0.88& 2.36 & 3.45 & 0.89\\
+M4-2nd & 3.06 & 1.11 &  0.89& 2.11 & 3.34 & 0.81\\
+M4-3rd & 3.13 & 1.23 &  0.95& 2.16 & 2.64 & 0.87\\\hline
 \end{tabular}
 \end{table}
 
