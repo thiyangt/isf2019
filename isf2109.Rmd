@@ -165,10 +165,10 @@ M4-3rd & 3.13 & 1.23 &  0.95& 2.16 & 2.64 & 0.87\\\hline
 \begin{exampleblock}{Peeking inside FFORMS!!!}
   \begin{itemize}
     \item \textcolor{red}{Which} features are the most important?
-    \item \textcolor{red}{Where} they get important?
-    \item \textcolor{red}{How} they get important?
-    \item \textcolor{red}{When} and \textcolor{red}{how} these features linked with the prediction outcome?
-    \item \textcolor{red}{When} and \textcolor{red}{how} strongly each feature interacts with
+    \item \textcolor{red}{Where} are they important?
+    \item \textcolor{red}{How} are they important?
+    \item \textcolor{red}{When} and \textcolor{red}{how} are features linked with the prediction outcome?
+    \item \textcolor{red}{When} and \textcolor{red}{how strongly} do features interacts with
 other features?
   \end{itemize}
 \end{exampleblock}
@@ -224,7 +224,7 @@ Overall role of features in the choice of different forecast-model selection.
 \end{alertblock}
 \end{textblock}
 
-## Feature importance plot for yearly data
+## Feature importance plots for yearly data
 
 ```{r viyearly, fig.pos="h", out.width="100%", out.height="98%"}
 
@@ -268,7 +268,7 @@ Hourly data
 \end{column}%
 \end{columns}
 
-## Feature importance plot for hourly data
+## Feature importance plots for hourly data
 
 ```{r vihourly, fig.pos="h", out.width="98%", out.height="98%", dev="png"}
 
