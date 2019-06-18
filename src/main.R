@@ -452,8 +452,9 @@ feaImp_hourly <- ggplot(meanrank_hourly, aes(y = rank, x = feature,fill=as.facto
   facet_wrap(~class, ncol = 6, nrow = 2) +
   coord_flip() + ylab("Average rank")+ 
   scale_fill_manual(breaks=c("0","1"), values=c("#f1a340","#998ec3"), guide="none")+
-  theme(text=element_text(size = 10))
+  theme(text=element_text(size = 10))+theme(strip.text.x = element_text(size = 10))
 feaImp_hourly
+
 
 
 ## ---- pdphourly
